@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>20_get요청_특정id</title>
+</head>
+<body>
+    <pre></pre>
+
+    <script>
+        const xhr = new XMLHttpRequest();
+
+        //todos 리소스에서 id를 사용하여 특정 todo만 취득
+        xhr.open('get', '/todos/2');//없는 id값을 입력해서 강제로 에러발생 테스트
+
+        xhr.send();
+
+        xhr.onload = ()=>{
+            if(xhr.status === 200){
+                document.querySelector('pre').textContent = xhr.response;
+            }else{
+                console.error('에러 : ', xhr.status, xhr.statusText);
+            }
+        };
+    </script>
+</body>
+</html>

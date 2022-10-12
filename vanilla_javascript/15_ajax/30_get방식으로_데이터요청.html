@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>30_get방식으로_데이터요청</title>
+</head>
+<body>
+    <button>get 방식으로 데이터 요청</button>
+
+    <p>
+        받아온 데이터 : <span class="result">?</span>
+    </p>
+
+    <script>
+        const $btn = document.querySelector('button');
+        const id = 'duly';
+        let xhr = null;
+
+        //서버에서 응답이 도착하면 호출되는 함수
+        const responseAjax = function(){
+            //console.log(xhr.readyState);
+            /*
+                readyState 속성은 xhr객체의 현재상태를 의미함
+
+                1 - 서버와의 연결이 성사됨
+                2 - 서버가 요청을 받았다.
+                3 - 요청을 처리하는 중 ...
+                4 - 요청에 대한 처리가 끝났고, 응답할 준비가 완료
+            */
+
+            //console.log(xhr.status);
+            /*
+                status 속성은 HTTP 상태코드(서버의 관점)
+
+                1xx : 끊지마, 아직 처리중이야~!
+                2xx : OK~! 성공, 자 여기 있어~!
+                3xx : 잘가!
+                4xx : 너(클라이언트)한테 문제가 있어
+                5xx : 나(서버)한테 문제가 있어
+            */
+        
+            if(xhr.readyState === 4 && xhr.status === 200){
+                const res = JSON.parse(xhr.response);//문자열을 객체로 역직렬화
+                console.log(res.data);
+                document.querySelector('.result').textContent = res.data;
+            }
+        };
+
+        $btn.addEventListener('click', function(){
+            xhr = new XMLHttpRequest();
+
+            if(!xhr){//xhr의 값이 falsy 하다면
+                alert('XMLHttpRequest 인스턴스를 만들지 못했어요~!');
+                return false;
+            }else{
+                console.log('XMLHttpRequest 인스턴스 생성 완료!');
+            }
+
+            xhr.onreadystatechange = responseAjax;
+
+            //서버와 통신을 위한 설정 - method, url, true(비동기:기본값)/false(동기)
+            xhr.open(
+                'get',
+                'http://mvcweb.dothome.co.kr/40-simple-response-get.php?id='+id,
+                true
+            );
+
+            xhr.send(null);
+        });
+
+
+    </script>
+</body>
+</html>
