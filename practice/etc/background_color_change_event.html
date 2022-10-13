@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>background_color_change</title>
+  <style>
+    *{margin:0;padding:0;}
+    .wrap{width:100vw;height:100vh;position:relative;background-color:seashell;}
+    .wrap .cont{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);display:flex;justify-content:center;padding:100px 0;width:200px;background-color:pink;}
+    .wrap .cont input{padding:5px;}
+  </style>
+  <script>
+
+    function clickEvent(){
+      var inputVal  = document.querySelector('#color_change');
+      var contColor = document.querySelector('.cont')
+      if(inputVal.value ==='on'){
+        contColor.style.backgroundColor = 'black';
+        inputVal.value = 'off';
+      }else{
+        contColor.style.backgroundColor = 'pink';
+        inputVal.value = 'on';
+      }
+    }
+
+  </script>
+</head>
+<body>
+    <div class="wrap">
+
+      <div class="cont">
+         <input id="color_change" type="button" value="on" onclick="clickEvent()">
+      </div>
+
+    </div>
+</body>
+</html>

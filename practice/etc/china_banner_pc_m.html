@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>abcd</title>
+  <style>
+    *{margin:0;padding:0;}
+    #wrap {position: relative;min-width: 1332px;}
+    .inner{width: 1000px;margin: 0 auto;text-align: center;}
+    /*evt_ban_china*/
+    .evt_ban_china{width:100%;}
+    .evt_ban_china>a{display:inline-block;width:32%;}
+
+  </style>
+  <script>
+
+  </script>
+</head>
+<body>
+
+  <div id="wrap">
+    <div class="inner">
+
+        <div class="evt_ban_china" data-china-banner="2 4 1" data-china-banner-type="pc"></div>
+
+    </div>
+  </div>
+
+  <script>
+//중국어 공통 배너
+(function(){
+    var evtBanChinaItem = document.querySelector('.evt_ban_china');
+
+    if(evtBanChinaItem && evtBanChinaItem.dataset.chinaBannerType && evtBanChinaItem.dataset.chinaBanner) {
+        var evtBanChinaType = evtBanChinaItem.dataset.chinaBannerType;
+        var evtBanChinaList = evtBanChinaItem.dataset.chinaBanner.split(' ').filter(function(item) { return item != ''});
+        var chinaBannerData = {
+            Banner1: {
+                href: '/?c=event&evt_id=22040501',
+                src: '//gscdn.hackers.co.kr/champ/img/china/common/banner/' + evtBanChinaType + '/china_banner_1.jpg'
+            },
+            Banner2: {
+                href: '/?c=event&evt_id=20071403',
+                src: '//gscdn.hackers.co.kr/champ/img/china/common/banner/' + evtBanChinaType + '/china_banner_2.jpg'
+            },
+            Banner3: {
+                href: '/?c=event&evt_id=22050401',
+                src: '//gscdn.hackers.co.kr/champ/img/china/common/banner/' + evtBanChinaType + '/china_banner_3.jpg'
+            },
+            Banner4: {
+                href: '/?c=event&evt_id=22050401',
+                src: '//gscdn.hackers.co.kr/champ/img/china/common/banner/' + evtBanChinaType + '/china_banner_4.jpg'
+            },
+            Banner5: {
+                href: '/?c=event&evt_id=22042501',
+                src: '//gscdn.hackers.co.kr/champ/img/china/common/banner/' + evtBanChinaType + '/china_banner_5.jpg'
+            },
+            Banner6: {
+                href: '/?c=event&evt_id=19091100',
+                src: '//gscdn.hackers.co.kr/champ/img/china/common/banner/' + evtBanChinaType + '/china_banner_6.jpg'
+            },
+            Banner7: {
+                href: '/?c=event&evt_id=19010400',
+                src: '//gscdn.hackers.co.kr/champ/img/china/common/banner/' + evtBanChinaType + '/china_banner_7.jpg'
+            },
+            Banner8: {
+                href: '/?c=event&evt_id=20042303',
+                src: '//gscdn.hackers.co.kr/champ/img/china/common/banner/' + evtBanChinaType + '/china_banner_8.jpg'
+            },
+            Banner9: {
+                href: 'https://www.hackers.ac/contents/?m=landing&v=china%2Fspeakingcamp',
+                src: '//gscdn.hackers.co.kr/champ/img/china/common/banner/' + evtBanChinaType + '/china_banner_9.jpg'
+            }
+
+        };
+
+        evtBanChinaList.forEach(function (Num) {
+            var a   = document.createElement('a');
+            var img = document.createElement('img');
+
+            img.src = chinaBannerData['Banner'+ Num].src;
+
+            a.target = '_blank';
+            a.href  = chinaBannerData['Banner'+ Num].href;
+
+            a.appendChild(img);
+            evtBanChinaItem.appendChild(a);
+        });
+    }
+})();
+
+</script>
+</body>
+</html>

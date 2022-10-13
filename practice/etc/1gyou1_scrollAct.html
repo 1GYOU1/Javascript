@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test</title>
+    <style>
+    *{margin: 0;padding: 0;}
+    .wrap{height:600vh}
+    .wrap img{vertical-align: top;}
+    .inner{width: 1000px;margin: 0 auto;text-align: center;}
+    .p_r{position:relative;}
+
+    /* main_visual */
+    .main_visual{background: url('//gscdn.hackers.co.kr/champ/img/china/event/2022/04/0501/pc/type1/v1/main_bg.jpg')no-repeat center top;}
+    .main_tit_1{position:absolute;top:150px;left:50%;transform: translateX(-50%);width:800px; display: none;}
+    .cung_ani{position:absolute;top:315px;left:0px;animation: cung_ani 0.3s forwards cubic-bezier(0.3, 0.27, 0, 1.1);display: none;}
+    .cung_ani .main_cont01{animation:1s 1s blink ease-in-out infinite alternate;}
+    .main_cont01{position:absolute;top:560px;left: 50%;transform: translateX(-50%);display: none;}
+    .main_cont02{position:absolute;top:933px;left:50%;transform: translateX(-50%);animation: show_up 1s forwards; display: none;}
+
+    @keyframes cung_ani {
+        0% {
+            opacity: 0;
+            transform: scale(5.5);
+        }
+        100% {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+
+    @keyframes blink{
+        0%{opacity:0;}
+        100%{opacity:1;}
+    }
+
+    @keyframes show_up{
+        0%{
+            opacity:0;
+            margin-top:200px;
+        }
+        100%{
+            opacity:1;
+            margin-top:0;
+        }
+    }
+
+	@keyframes show_up2{
+        0%{
+            opacity:0;
+            top:200px;
+        }
+        100%{
+            opacity:1;
+            top:0;
+        }
+    }
+
+    @keyframes balloon {
+        0% {
+            transform: translate(0, 0);
+        }
+        50% {
+            transform: translate(0, -7px);
+        }
+        100% {
+            transform: translate(0, 0);
+        }
+    }
+
+    /* cont01 */
+    .cont01 {background-color:#f4f9ff;}
+    .cont01 .benefit_01{position:absolute;top:300px;left:50%;transform: translateX(-50%);animation: show_up 1s forwards; display: none;}
+    .cont01 .benefit_02{position:absolute;top:600px;left:50%;transform: translateX(-50%);animation: show_up 1s forwards; display: none;}
+    .cont01 .bar{position:absolute;top:654px;left: 620px;animation: show_up 1s forwards;display: none;}
+    .cont01 .bar_txt{position:absolute;top:172px;left: 8px;animation: balloon 0.7s Infinite;}
+    /* cont02 */
+    .cont02 {background-color:#f4f9ff;}
+	.cont02 .teacher_box{position:absolute;top:200px;left:0px;}
+    .cont02 .teacher_box img{opacity: 0;transform: translateY(200px);transition:opacity .5s, transform .5s;}
+	.cont02 .teacher_box.on img{opacity: 1;transform: translateY(0);}
+	.cont02 .teacher_box.on img:first-child{transition-delay: .3s;}
+	.cont02 .teacher_box.on img:nth-child(2){transition-delay: .5s;}
+	.cont02 .teacher_box.on img:nth-child(3){transition-delay: .7s;}
+	.cont02 .teacher_box.on img:nth-child(4){transition-delay: .9s;}
+	.cont02 .teacher_box.on img:nth-child(5){transition-delay: 1.1s;}
+	.cont02 .teacher_box.on img:nth-child(6){transition-delay: 1.3s;}
+    </style>
+</head>
+<body>
+
+    <div class="wrap">
+
+            <div class="main_visual">
+                <div class="inner p_r">
+                    <img src="https://gscdn.hackers.co.kr/champ/img/china/event/2022/04/0501/pc/type2/v1/main_img.jpg" alt="">
+
+                    <img class="main_tit_1" src="https://gscdn.hackers.co.kr/champ/img/china/event/2022/04/0501/pc/type2/v1/main_tit_1.png" alt="">
+
+                    <div class="cung_ani">
+                        <img class="main_tit_2" src="https://gscdn.hackers.co.kr/champ/img/china/event/2022/04/0501/pc/type2/v1/main_tit_2.png" alt="">
+                        <img src="https://gscdn.hackers.co.kr/champ/img/china/event/2022/04/0501/pc/type2/v1/main_tit_3.png" alt="">
+                    </div>
+
+                    <img class="main_cont01" src="https://gscdn.hackers.co.kr/champ/img/china/event/2022/04/0501/pc/type2/v1/main_cont01.png" alt="">
+                    <img class="main_cont02" src="https://gscdn.hackers.co.kr/champ/img/china/event/2022/04/0501/pc/type2/v1/main_cont02.png" alt="">
+                </div>
+            </div>
+
+            <div class="cont01">
+                <div class="inner p_r">
+                    <img src="https://gscdn.hackers.co.kr/champ/img/china/event/2022/04/0501/pc/type2/v1/cont01.jpg" alt="">
+                    <img class="benefit_01" src="https://gscdn.hackers.co.kr/champ/img/china/event/2022/04/0501/pc/type2/v1/benefit_01.png" alt="">
+                    <img class="benefit_02" src="https://gscdn.hackers.co.kr/champ/img/china/event/2022/04/0501/pc/type2/v1/benefit_02.png" alt="">
+                    <div class="bar">
+                        <img class="benefit_bar" src="https://gscdn.hackers.co.kr/champ/img/china/event/2022/04/0501/pc/type2/v1/benefit_bar.png" alt="">
+                        <img class="bar_txt" src="https://gscdn.hackers.co.kr/champ/img/china/event/2022/04/0501/pc/type2/v1/bar_txt.png" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div class="cont02">
+                <div class="inner p_r">
+                    <img src="https://gscdn.hackers.co.kr/champ/img/china/event/2022/04/0501/pc/type2/v1/cont02.jpg" alt="">
+                    <div class="teacher_box">
+                        <img src="https://gscdn.hackers.co.kr/champ/img/china/event/2022/04/0501/pc/type2/v1/cont02_ani_1.png" alt="">
+                        <img src="https://gscdn.hackers.co.kr/champ/img/china/event/2022/04/0501/pc/type2/v1/cont02_ani_2.png" alt="">
+                        <img src="https://gscdn.hackers.co.kr/champ/img/china/event/2022/04/0501/pc/type2/v1/cont02_ani_3.png" alt="">
+                        <img src="https://gscdn.hackers.co.kr/champ/img/china/event/2022/04/0501/pc/type2/v1/cont02_ani_4.png" alt="">
+                        <img src="https://gscdn.hackers.co.kr/champ/img/china/event/2022/04/0501/pc/type2/v1/cont02_ani_5.png" alt="">
+                        <img src="https://gscdn.hackers.co.kr/champ/img/china/event/2022/04/0501/pc/type2/v1/cont02_ani_6.png" alt="">
+                    </div> 
+                </div>   
+            </div>
+
+    </div>
+
+</body>
+
+<script>
+
+
+    window.addEventListener('load', function(){
+
+        mainTimeSet();
+
+        // main_visual animation    
+        function mainTimeSet(){
+
+        setTimeout(function(){
+            document.querySelector('.main_tit_1').style.display = 'block';
+        }, 200);
+        setTimeout(function(){
+            document.querySelector('.cung_ani').style.display = 'flex';
+        }, 600);
+        setTimeout(function(){
+            document.querySelector('.main_cont01').style.display = 'block';
+        }, 1200);
+
+        };
+
+
+        window.addEventListener('scroll',function() {
+
+            topVal();
+
+        },false);
+
+        function topVal(){
+
+            let scrollTop = window.pageYOffset;
+            let main02Top = document.querySelector('.main_cont02').offsetTop;
+            let cont01Top = document.querySelector('.cont01').offsetTop;
+			let cont02Top = document.querySelector('.cont02').offsetTop;
+
+            // main_visual animation 
+            if(scrollTop >= main02Top){
+                document.querySelector('.main_cont02').style.display = 'block';
+            };
+
+            // cont01 animation 
+            if(scrollTop >= cont01Top - 400){
+                setTimeout(function(){
+                document.querySelector('.benefit_01').style.display = 'block';
+                }, 200);
+                setTimeout(function(){
+                    document.querySelector('.benefit_02').style.display = 'block';
+                }, 600);
+                setTimeout(function(){
+                    document.querySelector('.bar').style.display = 'block';
+                }, 1000);
+            };
+
+            // cont02 animation 
+			if(scrollTop >= cont02Top - 700){
+				setTimeout(function(){
+				document.querySelector('.teacher_box').classList.add('on');
+                }, 200);
+			}
+
+            console.log(cont02Top)
+
+        }
+
+
+    });
+
+
+</script>
+
+</html>

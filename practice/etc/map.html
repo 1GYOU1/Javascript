@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1gyou1</title>
+    <style>
+
+    </style>
+</head>
+<body>
+
+    <div class="wrap">
+        <div class="inner">
+            <ul class="cont01">
+                <li>a</li>
+                <li>b</li>
+                <li>c</li>
+                <li>d</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // li의 textContent 배열로 만들기 ↓↓
+
+        let a = document.querySelectorAll('.cont01 li');
+
+        let b = [...a].map((value, index, arr) => {                
+            return value.textContent                
+        })
+
+        console.log(b)
+        //(4) ['a', 'b', 'c', 'd']
+
+        // console.dir([...a].map(v => v.textContent))
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>scroll_quick</title>
+    <style>
+    *{margin: 0;padding: 0;}
+    .wrap{height:auto;}
+    .wrap img{vertical-align: top;}
+    .inner{width: 1000px;margin: 0 auto;text-align: center;}
+    .p_r{position:relative;}
+
+    .main_visual{width:100%;height:500px;background-color: plum;}
+    .cont01{width:100%;height:800px;background-color: pink;}
+    .cont02{width:100%;height:800px;background-color: azure;}
+    .cont03{width:100%;height:800px;background-color: skyblue;}
+    .cont04{width:100%;height:800px;background-color: honeydew;}
+    .cont05{width:100%;height:800px;background-color: mediumaquamarine;}
+    .cont06{width:100%;height:800px;background-color: yellowgreen;}
+
+    </style>
+</head>
+<body>
+
+    <div class="wrap">
+        <div class="main_visual"></div>
+        <!-- lazy_move 영역 -->
+        <div class="cont01"></div>
+        <div class="cont02"></div>
+        <div class="cont03"></div>
+        <div class="cont04"></div>
+        <div class="cont05"></div>
+         <!-- //lazy_move 영역 -->
+        <div class="cont06"></div>
+    </div>
+
+     <!--우측 퀵배너-->
+     <div class="kakao_quick" style="position:absolute;top:200px;right:60px;">
+        <a href="https://pf.kakao.com/_xoflxlu" target="_blank">
+            <img src="//gscdn.hackers.co.kr//champ/img/chobo/event/2021/2301/pc/type2/v2/kakao.png" alt=""/>
+        </a>
+    </div>
+    <!--//우측 퀵배너-->
+
+
+</body>
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js'></script>
+<!--jQuery 소스삽입  cdnjs 플러그인 사용 -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js'></script>
+<!--jQuery-ui 소스삽입 (aniamtion 기능, 다양한 ui component)  cdnjs 플러그인 사용 -->
+
+
+<script>
+
+    //scroll quick
+if($(".kakao_quick").length != 0) {
+    var cssTop = parseInt($(".kakao_quick").css('top'));
+    var firstP2 = $(".kakao_quick").offset().top - 50;
+
+    $(window).scroll(function () {
+        var position = $(window).scrollTop();
+        var barTop = position + 50;
+
+        if (position >= firstP2) {
+            $(".kakao_quick").stop().css({'top': barTop});
+        } else {
+            $('.kakao_quick').stop().animate({'top': cssTop + "px"}, 500);
+        }
+    });
+}
+
+
+</script>
+
+</html>

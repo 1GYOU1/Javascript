@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1gyou1</title>
+    <style>
+	*{padding:0;margin:0;}
+
+	.wrap2{width:1050px;margin:0 auto;}
+
+	.cont01{position:relative;}
+
+	.pass_bar_01{position:absolute;top:346px;left:250px;}
+	.pass_bar_02{position:absolute;top:431px;left:272px;}
+	.pass_bar_03{position:absolute;top:516px;left:274px;}
+	.pass_bar_01.on{animation: scale-up-hor-left 1s 1s forwards ;opacity:0;}
+	.pass_bar_02.on{animation: scale-up-hor-left 1s 1.2s forwards ;opacity:0}
+	.pass_bar_03.on{animation: scale-up-hor-left 1s 1.4s forwards ;opacity:0}
+	.trophy{position:absolute;top:216px;left:0;}
+	.badge{position:absolute;top:700px;left:10px;}
+	.badge.on{animation: scale-50 1.5s 2s ease;opacity:0;}
+
+	.cont02{position:relative;}
+
+	.pass_arrow{position:absolute;top:530px;left:81px;}
+	.pass_dung{position:absolute;top:444px;left:573px;}
+	.stick_1{position:absolute;top:790px;left:81px;}
+	.stick_2{position:absolute;top:748px;left:188px;}
+	.stick_3{position:absolute;top:693px;left:296px;}
+	.stick_4{position:absolute;top:636px;left:406px;}
+	.stick_5{position:absolute;top:565px;left:514px;}
+
+	.pass_arrow.on{animation:scale-up-left 1s 0.5s forwards;opacity: 0;}
+	.stick_1.on{animation:bottom-100 1s 0.2s forwards;opacity: 0;}
+	.stick_2.on{animation:bottom-100 1s 0.4s forwards;opacity: 0;}
+	.stick_3.on{animation:bottom-100 1s 0.6s forwards;opacity: 0;}
+	.stick_4.on{animation:bottom-100 1s 0.8s forwards;opacity: 0;}
+	.stick_5.on{animation:bottom-100 1s 1s forwards;opacity: 0;}
+
+	.cont02 .count{position:absolute;top:217px;left:126px;font-size: 50px;color:#fff;letter-spacing: 36px;}
+
+	@keyframes scale-50{
+            0% {
+                opacity: 0;
+                transform: scale(3);
+            }
+            50% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        @keyframes scale-up-hor-left {
+            0% {
+                opacity: 0;
+                transform: scaleX(0.4);
+                transform-origin: 0% 0%;
+            }
+            30% {
+                transform: scaleX(1);
+                transform-origin: 0% 0%;
+                opacity: 1;
+            }
+            100% {
+                transform: scaleX(1);
+                transform-origin: 0% 0%;
+                opacity: 1;
+            }
+        }
+
+        @keyframes blink{
+            50% {
+                opacity: 0;
+            }
+            100% {
+                transform: translate(0, 0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes bottom-100 {
+            0%{
+                opacity: 0;
+                transform: scaleY(0.4);
+                transform-origin: 0% 100%;
+            }
+            50%{
+                transform: scaleY(1);
+                transform-origin: 0% 100%;
+                opacity: 1;
+            }
+            100%{
+                transform: scaleY(1);
+                transform-origin: 0% 100%;
+                opacity: 1;
+            }
+        }
+
+        @-webkit-keyframes scale-up-left {
+            0% {
+                -webkit-transform: scale(0.5);
+                transform: scale(0.5);
+                -webkit-transform-origin: 0% 50%;
+                transform-origin: 0% 50%;
+            }
+            50% {
+                -webkit-transform: scale(1);
+                transform: scale(1);
+                -webkit-transform-origin: 0% 50%;
+                transform-origin: 0% 50%;
+                opacity: 1;
+            }
+            100% {
+                -webkit-transform: scale(1);
+                transform: scale(1);
+                -webkit-transform-origin: 0% 50%;
+                transform-origin: 0% 50%;
+                opacity: 1;
+            }
+
+        }
+        @keyframes scale-up-left {
+            0% {
+                -webkit-transform: scale(0.5);
+                transform: scale(0.5);
+                -webkit-transform-origin: 0% 50%;
+                transform-origin: 0% 50%;
+            }
+            100% {
+                -webkit-transform: scale(1);
+                transform: scale(1);
+                -webkit-transform-origin: 0% 50%;
+                transform-origin: 0% 50%;
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+	<div class="wrap2">
+        <div class="inner">
+            <div class="cont01">
+                <img class="pass_cont01" src="//gscdn.hackers.co.kr/pass/test/v1/cont01.jpg" alt="" >
+
+                <img class="pass_bar_01" src="//gscdn.hackers.co.kr/pass/test/v1/bar_01.png" alt="" >
+                <img class="pass_bar_02" src="//gscdn.hackers.co.kr/pass/test/v1/bar_02.png" alt="" >
+                <img class="pass_bar_03" src="//gscdn.hackers.co.kr/pass/test/v1/bar_03.png" alt="" >
+
+                <img class="trophy" src="//gscdn.hackers.co.kr/pass/test/v1/trophy.png" alt="" >
+                <img class="badge" src="//gscdn.hackers.co.kr/pass/test/v1/badge.png" alt="" >
+
+            </div>
+            <div class="cont02">
+                <img class="pass_cont02" src="//gscdn.hackers.co.kr/pass/test/v1/pass_3.jpg" alt="" >
+
+                <img class="pass_arrow" src="//gscdn.hackers.co.kr/pass/test/v1/pass_arrow.png" alt="" >
+                <img class="pass_dung dungdung" src="//gscdn.hackers.co.kr/pass/test/v1/pass_dung.png" alt="" >
+                <img class="stick_1" src="//gscdn.hackers.co.kr/pass/test/v1/stick_1.jpg" alt="" >
+                <img class="stick_2" src="//gscdn.hackers.co.kr/pass/test/v1/stick_2.jpg" alt="" >
+                <img class="stick_3" src="//gscdn.hackers.co.kr/pass/test/v1/stick_3.jpg" alt="" >
+                <img class="stick_4" src="//gscdn.hackers.co.kr/pass/test/v1/stick_4.jpg" alt="" >
+                <img class="stick_5" src="//gscdn.hackers.co.kr/pass/test/v1/stick_5.jpg" alt="" >
+
+                <div class="num_wrap">
+                    <div>
+                        <p class="count" data-count="12345678900" data-count-type="price">0</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js'></script>
+<!--jQuery 소스삽입  cdnjs 플러그인 사용 -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js'></script>
+<!--jQuery-ui 소스삽입 (aniamtion 기능, 다양한 ui component)  cdnjs 플러그인 사용 -->
+<script>
+	count(); // 최초(즉시)실행
+	classOn();
+	classOn2();
+
+	repeat = setInterval(count, 4000); // delay 간격으로 실행.
+	repeat = setInterval(classOn, 3000); // delay 간격으로 실행.
+	repeat = setInterval(classOn2, 2000); // delay 간격으로 실행.
+
+	var countReg = new RegExp(/\B(?=(\d{3})+(?!\d))/, "g");
+
+	function count () {
+
+		$('.count').each(function () {
+			$(this).prop('Counter', 10000000000).animate({
+				Counter: $(this).data('count')
+			}, {
+				duration: 1200,
+				easing: 'linear',
+				step: function (now) {
+					$(this).text((Math.ceil(now).toString().replace(countReg, " ")))
+				}
+			});
+		});
+	}
+	function classOn () {
+		$('.pass_bar_01').toggleClass('on')
+		$('.pass_bar_02').toggleClass('on')
+		$('.pass_bar_03').toggleClass('on')
+		$('.badge').toggleClass('on')
+	}
+
+	function classOn2(){
+		$('.stick_1').toggleClass('on')
+		$('.stick_2').toggleClass('on')
+		$('.stick_3').toggleClass('on')
+		$('.stick_4').toggleClass('on')
+		$('.stick_5').toggleClass('on')
+		$('.pass_arrow').toggleClass('on')
+	}
+</script>
+</body>
+</html>
