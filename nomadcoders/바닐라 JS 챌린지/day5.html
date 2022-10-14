@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Vanilla Challenge</title>
+    <meta charset="UTF-8" />
+  </head>
+
+  <body>
+    <script>
+		function resizeAct() {
+			const body = document.querySelector("body");
+			const winSize = window.innerWidth;
+
+			if (winSize >= 1000) {
+				body.style.backgroundColor = "pink";
+			} else if (winSize < 1000 && winSize >= 700) {
+				body.style.backgroundColor = "coral";
+			} else if (winSize < 700 && winSize >= 400) {
+				body.style.backgroundColor = "skyblue";
+			} else if (winSize < 400) {
+				body.style.backgroundColor = "lightyellow";
+			}
+		}
+
+		window.addEventListener("resize", resizeAct);
+	</script>
+  </body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1gyou1</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <h4>
+        Generate a number between 0 and
+        <input type="text" id="num_sel" />
+    </h4>
+
+    <div>
+        Guess the number :
+        <input type="text" id="input" />
+        <button>play!</button>
+    </div>
+
+    <p style="display: none;">
+        You chose: <span id="user_num"></span>, the machine chose:
+        <span id="machine_num"></span>.
+    </p>
+
+    <strong></strong>
+
+    <script>
+    let numSelect = document.querySelector("#num_sel");
+
+    let input = document.getElementById('input');
+    let btn = document.querySelector("Button");
+
+    let p = document.querySelector("p");
+    let userNum = document.querySelector("#user_num");
+    let marchineNum = document.querySelector("#machine_num");
+
+    let strong = document.querySelector("strong");
+
+    numSelect.addEventListener("change", numSelctEvt);
+
+    function numSelctEvt(){
+        if(numSelect.value === "" || isNaN(parseInt(numSelect.value)) === true){
+            return alert("숫자를 입력해주세요.");
+        }
+        else if(parseInt(numSelect.value) <= 0){
+            return alert('0보다 큰 숫자를 입력해주세요.')
+        }else{
+            input.focus();
+        }
+    }
+
+    btn.addEventListener("click", btnClickEvt);
+
+    function btnClickEvt() {
+        if(numSelect.value === ""){
+            return alert('숫자 범위를 정해주세요.')
+        }
+        else if (
+            input.value === "" || isNaN(parseInt(input.value)) === true){
+            return alert("숫자를 입력해주세요.");
+        }
+        else if(parseInt(input.value) > parseInt(numSelect.value) || parseInt(input.value) <= 0){
+            return alert("지정한 범위내의 숫자를 입력해주세요.");
+        }
+        else{
+            p.style.display = 'block';
+            userNum.style.fontWeight = 'bold';
+            marchineNum.style.fontWeight = 'bold';
+
+            userNum.textContent = parseInt(input.value);
+            marchineNum.textContent = Math.round(Math.random()*parseInt(numSelect.value));
+
+            if(userNum.textContent === marchineNum.textContent){
+                strong.textContent = 'You win !'
+            }else{
+                strong.textContent = 'You lost !'
+            }
+        
+        }
+    }
+    </script>
+</body>
+</html>

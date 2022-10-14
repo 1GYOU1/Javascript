@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>modern_javascript_2.8_practice_연산자</title>
+  <style>
+
+  </style>
+
+  <script>
+    //아래 코드가 실행된 후, 변수 a, b, c, d엔 각각 어떤 값들이 저장될까요?
+    // let a = 1, b = 1;
+
+    // let c = ++a; // 2
+    // let d = b++; // 1
+
+    // a=2, b=2, c=2, d=1
+
+
+
+    //아래 코드가 실행되고 난 후, a와 x엔 각각 어떤 값이 저장될까요?
+    // let a = 2;
+
+    // let x = 1 + (a *= 2);
+
+    //a=4, x=5
+
+
+
+    //아래 표현식들의 결과를 예측해 보세요
+    // "" + 1 + 0  //10
+    // "" - 1 + 0  //-1
+    // true + false    //1
+    // 6 / "3" //2
+    // "2" * "3"   //6
+    // 4 + 5 + "px"    //9px
+    // "$" + 4 + 5 //$45
+    // "4" - 2 //2
+    // "4px" - 2   //NaN
+    // 7 / 0   //Infinity
+    // "  -9  " + 5    //-9  5
+    // "  -9  " - 5    //-14
+    // null + 1    //1
+    // undefined + 1   //NaN
+    // " \t \n" - 2    //-2
+
+
+
+    //아래 코드는 사용자에게 숫자 2개를 입력받은 다음 그 합을 보여줍니다.
+    // 그런데 의도한 대로 예시가 동작하지 않습니다. 프롬프트 창에 세팅한 기본값을 수정하지 않은 경우 덧셈의 결과는 12가 됩니다.
+    // 왜 그럴까요? 예시가 제대로 동작하도록 코드를 수정해 보세요. 결과는 3이 되어야 합니다.
+
+    // let a = prompt("덧셈할 첫 번째 숫자를 입력해주세요.", 1);
+    // let b = prompt("덧셈할 두 번째 숫자를 입력해주세요.", 2);
+
+    // alert(parseInt(a) + parseInt(b)); // 3
+
+    //해답 1
+    // let a = +prompt("덧셈할 첫 번째 숫자를 입력해주세요.", 1);
+    // let b = +prompt("덧셈할 두 번째 숫자를 입력해주세요.", 2);
+
+    //해답 2
+    // let a = prompt("덧셈할 첫 번째 숫자를 입력해주세요.", 1);
+    // let b = prompt("덧셈할 두 번째 숫자를 입력해주세요.", 2);
+
+
+    //2.9
+    //아래 표현식들의 결과를 예측해보세요.
+    // 5 > 4   //true
+    // "apple" > "pineapple"   //false 사전순서가 기준. 뒤에있어야하는 알파벳일수록 큼.
+    // "2" > "12"  //true  //문자열이므로 사전순서. 맨 앞 2가 더 큼.
+    // undefined == null   //true
+    // undefined === null  //false
+    // null == "\n0\n" //false
+    // null === +"\n0\n"   //false 
+
+
+
+  </script>
+</head>
+<body>
+
+</body>
+</html>
