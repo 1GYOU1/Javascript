@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Momentum App</title>
+  <style>
+    /* layout */
+    * {margin: 0;padding: 0;}
+    ul{list-style: none;}
+    .wrap {width: 100vw;height: 100vh;position:relative;text-align: center;}
+    .inner{position:absolute;top:50%;left:50%;transform: translate(-50%, -50%);}
+    /* clock */
+    #clock{font-size: 48px;color: #3d3d3d;}
+    /* login */
+    #loginForm input[type='text']{padding:3px 0;text-align: center;font-size: 14px;}
+    #loginForm input[type='submit']{
+      padding:4px; background-color: pink;border:1px solid #fff;color:#3d3d3d;font-weight: bold;}
+    h1#greeting{font-size: 32px;margin-top:10px;}
+    .hidden {display: none;}
+    /* todolist */
+    form#todoForm{margin-top:10px;}
+    form#todoForm input{width:200px;padding:3px 0;text-align: center;font-size:14px;}
+    ul#todoList{margin-top:10px;}
+    ul#todoList li{margin-top:5px;}
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="inner">
+      <!-- clock -->
+      <h2 id="clock">00:00:00</h2>
+      <!-- login -->
+      <form class="hidden" id="loginForm">
+        <input type="text" placeholder="What is your name?" required maxlength="15"/>
+        <input type="submit" value="Log In" />
+      </form>
+      <h1 class="hidden" id="greeting"></h1>
+      <!-- Todo list -->
+      <form id="todoForm">
+        <input type="text" placeholder="Write a To Do and Press Enter" required />
+      </form>
+      <ul id="todoList"></ul>
+      <!-- weather -->
+      <div id="weather">
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </div>
+  <script>
+    // background event
+    const body = document.querySelector('body');
+    const colors = [
+      "color1",
+      "color2",
+      "color3",
+      "color4"
+    ];
+    function colorEvent() {
+      const colorNum1 = colors[Math.floor(Math.random() * colors.length)]
+      const colorNum2 = colors[Math.floor(Math.random() * colors.length)]
+      body.style.background = `url(./img/${colorNum1}.jpeg)`
+    }
+    // clock event
+    const clock = document.querySelector("h2#clock");
+
+    function clockEvent() {
+      const nowDate = new Date();
+      const hours = String(nowDate.getHours()).padStart(2, "0");
+      const minutes = String(nowDate.getMinutes()).padStart(2, "0");
+      const seconds = String(nowDate.getSeconds()).padStart(2, "0");
+      clock.innerText = `${hours}:${minutes}:${seconds}`;
+    }
+    // login
+    const loginForm = document.querySelector("#loginForm");
+    const loginInput = document.querySelector("#loginForm input");
+    const greeting = document.querySelector("#greeting");
+
+    const HIDDEN_CLASSNAME = "hidden";
+    const USERNAME_KEY = "username";
+
+    function onLoginSubmit(event) {
+      event.preventDefault();
+      loginForm.classList.add(HIDDEN_CLASSNAME);
+      const username = loginInput.value;
+      localStorage.setItem(USERNAME_KEY, username);
+      paintGreetings(username);
+    }
+
+    function paintGreetings(username) {
+      greeting.innerText = `Hello ${username}`;
+      greeting.classList.remove(HIDDEN_CLASSNAME);
+    }
+
+    const savedUsername = localStorage.getItem(USERNAME_KEY);
+
+    if (savedUsername === null) {
+      loginForm.classList.remove(HIDDEN_CLASSNAME);
+      loginForm.addEventListener("submit", onLoginSubmit);
+    } else {
+      paintGreetings(savedUsername);
+    }
+
+    //Todo list
+    const toDoForm = document.getElementById("todoForm");
+    const toDoInput = document.querySelector("#todoForm input");
+    const toDoList = document.getElementById("todoList");
+
+    const TODOS_KEY = "todos";
+
+    let toDos = [];
+
+    function saveToDos() {
+      localStorage.setItem(TODOS_KEY, JSON.stringify(toDos));
+    }
+
+    function deleteToDo(event) {
+      const li = event.target.parentElement;
+      li.remove();
+      toDos = toDos.filter((toDo) => toDo.id !== parseInt(li.id));
+      saveToDos();
+    }
+
+    function paintToDo(newTodo) {
+      const li = document.createElement("li");
+      li.id = newTodo.id;
+      const span = document.createElement("span");
+      span.innerText = newTodo.text;
+      const button = document.createElement("button");
+      button.innerText = "❌";
+      button.addEventListener("click", deleteToDo);
+      li.appendChild(span);
+      li.appendChild(button);
+      toDoList.appendChild(li);
+    }
+
+    function handleToDoSubmit(event) {
+      event.preventDefault();
+      const newTodo = toDoInput.value;
+      toDoInput.value = "";
+      const newTodoObj = {
+        text: newTodo,
+        id: Date.now(),
+      };
+      toDos.push(newTodoObj);
+      paintToDo(newTodoObj);
+      saveToDos();
+    }
+
+    toDoForm.addEventListener("submit", handleToDoSubmit);
+
+    const savedToDos = localStorage.getItem(TODOS_KEY);
+
+    if (savedToDos !== null) {
+      const parsedToDos = JSON.parse(savedToDos);
+      toDos = parsedToDos;
+      parsedToDos.forEach(paintToDo);
+    }
+
+    // weather
+    const weather = document.querySelector("#weather span:first-child");
+    const city = document.querySelector("#weather span:last-child");
+    const API_KEY = "241051bf13976dd3ddf8b8d9f247255e";
+
+    function onGeoOk(position) {
+      const lat = position.coords.latitude;
+      const lon = position.coords.longitude;
+      const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`;
+      fetch(url)
+        .then((response) => response.json())
+        .then((data) => {
+          city.innerText = data.name;
+          weather.innerText = `${data.weather[0].main} / ${data.main.temp}`;
+        });
+    }
+    function onGeoError() {
+      alert("Can't find you. No weather for you.");
+    }
+
+    navigator.geolocation.getCurrentPosition(onGeoOk, onGeoError);
+
+    (function () {
+      colorEvent();
+      clockEvent();
+      setInterval(clockEvent, 1000);
+    })();
+  </script>
+</body>
+
+</html>
