@@ -1,4 +1,0 @@
-{    
-    "exec":"babel-node src/web.js",
-    "ignore":["src/public/*"]
-}
