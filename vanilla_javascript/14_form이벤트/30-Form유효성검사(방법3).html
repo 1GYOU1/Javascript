@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>30-Form유효성검사(방법3)</title>
+    <style>
+        *{padding:0;margin: 0;}
+        body{width:500px;margin:0 auto;}
+        
+        h1{text-align: center;color:lightskyblue}
+
+        fieldset{border:1px solid lightskyblue}
+        legend{text-indent: -9999px;}
+        table{margin: 0 auto;padding:10px 0;}
+        table tr{display: block;margin-bottom:10px;}
+        table tr th{width:30%;}
+        table tr th label{color:#3d3d3d;}
+        table input{border: 1px solid lightskyblue;border-radius: 5px;height:20px;margin-left:5px;}
+        table input:focus,table input:hover{outline: 2px solid lightskyblue;}
+
+        .btn_wrap{display: flex;justify-content: center;}
+        button{padding:5px 10px; background-color: lightskyblue;color:#fff;border:none;border-radius: 5px;border:2px solid lightskyblue;box-sizing: border-box;}
+        button:focus,button:hover{background-color:#fff;color:#3d3d3d;}
+    </style>
+</head>
+<body>
+    <h1>Login</h1>
+
+    <form name="frmLogin">
+        <fieldset>
+            <legend>로그인정보</legend>
+
+            <table>
+                <tbody>
+                    <tr>
+                        <th><label for="userid">ID</label></th>
+                        <td><input type="text" name="userid" id="userid" autocomplete="off" autofocus></td>
+                    </tr>
+                    <tr>
+                        <th><label for="pwd">PW</label></th>
+                        <td><input type="password" name="pwd" id="pwd"></td>
+                    </tr>
+                    <tr class="btn_wrap">
+                        <td colspan="2">
+                            <button type="button">submit</button>
+                            <button type="reset">reset</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </fieldset>
+    </form>
+
+    <script>
+        const $btnSmit = document.querySelector('button[type=button]');
+        const $userid = document.getElementById('userid');
+        const $pwd = document.getElementById('pwd');
+
+        $btnSmit.addEventListener('click', function(){
+
+            //1. 사용자가 입력한 값을 가져오기.
+            const userid = $userid.value.trim();
+            const pwd = $pwd.value.trim();
+
+            const ValidationLogin = new Login.Validation(userid, pwd);
+            ValidationLogin.check();//유효성 검사를 하는 check 메소드를 호출
+        });
+
+            // const abc = function(name){
+            //     this.name = name;
+            // }
+            //표현식
+
+            // function abc(name){
+            //     this.name = name;
+            // }
+            //선언식
+
+            //생성자함수를 이용한 객체지향 방식의 보안유효성 검사
+            const Login = new Object(); //다른 개발자가 만든 코드와의 중복방지(패키지)
+
+            // 2. 패키지안에 유효성 검사를 위한 생성자함수 선언
+            Login.Validation = function(userid, pwd){
+                this.userid = userid;
+                this.pwd = pwd;
+            }
+
+            // 3. 유효성 검사를 하는 check 메소드 등록
+            Login.Validation.prototype.check = function(){
+                if(this.userid === null || this.userid === ''){
+                    alert('아이디를 입력해 주세요');
+                    $userid.focus();
+                    return false;
+                }
+    
+                if(this.pwd === null || this.pwd === ''){
+                    alert('패스워드를 입력해 주세요');
+                    $pwd.focus();
+                    return false;
+                }
+
+              
+                alert(`userid = ${this.userid}`);
+                alert(`pwd = ${this.pwd}`);
+
+                document.forms['frmLogin'].action = 'login_ok.html';
+                document.forms['frmLogin'].method = 'post';
+                document.forms['frmLogin'].submit();
+            };
+
+    </script>
+</body>
+</html>

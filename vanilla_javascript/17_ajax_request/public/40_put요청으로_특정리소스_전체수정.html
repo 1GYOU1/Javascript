@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>40_put요청으로_특정리소스_전체수정</title>
+</head>
+<body>
+    <pre></pre>
+
+    <script>
+        const xhr = new XMLHttpRequest();
+
+        //id가 4번인 todo의 리소스 전체를 교체
+        xhr.open('put','/todos/4');
+
+        //전송할 데이터의 타입을 지정
+        xhr.setRequestHeader('Content-Type','application/json');
+        
+        xhr.send(JSON.stringify({"id": 4,"content": "React","completed": true}));
+
+        xhr.onload = ()=>{
+            //201은 Created, 200은 Ok를 의미
+            if(xhr.status===200 || xhr.status===201){
+                document.querySelector('pre').textContent = xhr.response;
+            }
+        };
+    </script>
+</body>
+</html>

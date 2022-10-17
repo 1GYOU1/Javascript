@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>30_post요청으로_데이터추가</title>
+</head>
+<body>
+    <pre></pre>
+
+    <script>
+        const xhr = new XMLHttpRequest();
+
+        //todos 리소스에 새로운 todo 생성
+        xhr.open('post', '/todos');
+
+        //전송할 데이터의 타입을 지정
+        xhr.setRequestHeader('Content-Type','application/json');
+        
+        xhr.send(JSON.stringify({"id": 4,"content": "PhotoShop","completed": false}));
+
+        xhr.onload = ()=>{
+            //201은 Created, 200은 Ok를 의미
+            if(xhr.status===200 || xhr.status===201){
+                document.querySelector('pre').textContent = xhr.response;
+            }
+        };
+    </script>
+</body>
+</html>

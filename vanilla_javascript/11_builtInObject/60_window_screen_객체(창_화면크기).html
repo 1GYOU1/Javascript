@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>60_window_screen_객체(창_화면크기)</title>
+</head>
+<body>
+    <h1>window, screen 객체</h1>
+    
+    <h2>현재 브라우저 화면의 크기(스크롤바와 툴바 미포함)</h2>
+    <h3>window.innerWidth : <span>?</span></h3>
+    <h3>window.innerHeight : <span>?</span></h3>
+
+    <hr>
+
+    <h2>현재 사용자의 모니터 스크린의 크기 (작업 표시줄 제외)</h2>
+    <h3>screen.width : <span>?</span></h3>
+    <h3>screen.height : <span>?</span></h3>
+
+    <h3>screen.colorDepth : <span>?</span></h3>
+
+    <script>
+        const $innerWidth = document.querySelector('h3:nth-of-type(1)>span');
+        const $innerHeight = document.querySelector('h3:nth-of-type(2)>span')
+
+        //브라우저의 크기가 변할때마다 발생하는 resize 이벤트 구문
+
+        window.addEventListener("resize", function() {
+            const innerWidth = window.innerWidth + 'px';
+            const innerHeight = window.innerHeight + 'px';
+
+            $innerWidth.textContent = innerWidth;
+            $innerHeight.textContent = innerHeight;
+        });
+
+        //모니터 해상도 출력
+        const $screenWidth = document.querySelector('h3:nth-of-type(3)>span');
+        const $screenHeight = document.querySelector('h3:nth-of-type(4)>span')
+
+        $screenWidth.textContent = screen.width + 'px';
+        $screenHeight.textContent = screen.height + 'px';
+
+        const $colorDepth = document.querySelector('h3:nth-of-type(5)>span')
+
+        $colorDepth.textContent = screen.colorDepth + '비트';
+    </script>
+</body>
+</html>

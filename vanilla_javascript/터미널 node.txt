@@ -1,0 +1,23 @@
+터미널 이전 기록 지우기
+
+cls
+clear
+
+
+npm init
+npm init -y : 기본값으로 설정
+
+
+ npm i nodemon -D : 모듈 설치
+
+npm i @babel/core @babel/cli @babel/node @babel/preset-env -D
+: 여러개 모듈 설치
+
+npm i socket.io express ejs
+:3개 모듈 서ㅗㄹ치
+
+npm run start 시작
+
+ctrl + C 끝내기
+
+http://localhost:포트숫자
