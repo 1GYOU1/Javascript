@@ -134,11 +134,12 @@ localStorage.length;
 
 ## .appendTo()
 
+A.appendChild(B) -> A안에 B
+
 js
 ```js
 const li = document.createElement('li');
 const span = document.createElement('span');
-
 li.appendChild(span)
 ```
 html ↓↓↓
@@ -146,6 +147,30 @@ html ↓↓↓
 <li>
     <span></span>
 </li>
+```
+
+<br>
+
+## JSON.stringify()
+
+JavaScript object나 array를 string으로 바꿔줌
+
+```js
+const a = [1, 2, 3];
+JSON.stringify(a)
+//"[1, 2, 3]" -> string
+```
+
+<br>
+
+## JSON.parse()
+
+string을 JavaScript object로 바꿔줌
+
+```js
+const a = [1, 2, 3];
+JSON.parse(a)
+//[1, 2, 3] -> Array
 ```
 
 
