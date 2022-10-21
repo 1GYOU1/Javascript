@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>산업안전기사 브랜딩단</title>
+    <style>
+		*{padding:0;margin:0;}
+
+    .wrap{width:1000px;margin:0 auto;}
+    .p_r{position:relative;}
+    .pc_w .inner{margin:0 auto;width:1000px;}
+
+	/*산업안전기사*/
+	.pc_safe.branding_cont{background:#f3f3f3;}
+    .pc_safe.branding_cont .text{border-right:0.05em solid black;animation:cursor 0.5s ease infinite;display:block;position:absolute;left:89px;top:304px;font-size:30px;}
+    .pc_safe.branding_cont .num_wrap p{position:absolute;top:597px;left:621px;letter-spacing: 0;font-size: 23px;color:#c97919;font-weight: bold;}
+    .pc_safe.branding_cont .ddak{position:absolute;left:578px;top:536px;}
+    .pc_safe.branding_cont .pass_arrow_safe{position:absolute;left:613px;top:514px;}
+    .pc_safe.branding_cont .pass_arrow_safe.on{animation:scale-up-left 2s forwards;opacity: 0;}
+
+	@keyframes cursor{
+        50%{
+            border-color:transparent;
+        }
+    }
+    @-webkit-keyframes cursor{
+        50%{
+            border-color:transparent;
+        }
+    }
+    @-webkit-keyframes scale-up-left {
+        0% {
+            -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+            -webkit-transform-origin: 0% 50%;
+            transform-origin: 0% 50%;
+        }
+        50% {
+            -webkit-transform: scale(1);
+            transform: scale(1);
+            -webkit-transform-origin: 0% 50%;
+            transform-origin: 0% 50%;
+            opacity: 1;
+        }
+        100% {
+            -webkit-transform: scale(1);
+            transform: scale(1);
+            -webkit-transform-origin: 0% 50%;
+            transform-origin: 0% 50%;
+            opacity: 1;
+        }
+
+    }
+    @keyframes scale-up-left {
+        0% {
+            -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+            -webkit-transform-origin: 0% 50%;
+            transform-origin: 0% 50%;
+        }
+        100% {
+            -webkit-transform: scale(1);
+            transform: scale(1);
+            -webkit-transform-origin: 0% 50%;
+            transform-origin: 0% 50%;
+            opacity: 1;
+        }
+    }
+
+    </style>
+</head>
+<body>
+
+    <div class="wrap">
+		<!-- PC 산업안전기사 브랜딩단 공통단 -->
+		<div class="pc_safe branding_cont">
+			<div class="inner p_r">
+				<img src="//gscdn.hackers.co.kr/pass/img/common/branding_safe.jpg" alt="산업안전기사">
+				<b class="text"></b><!--해커스 산업안전기사-->
+				<img class="pass_arrow_safe" src="//gscdn.hackers.co.kr/pass/img/common/arrow.png" alt="증가">
+				<img class="ddak" src="//gscdn.hackers.co.kr/pass/img/common/ddak.png" alt="구매자수 증가">
+				<div class="num_wrap">
+					<div>
+						<p class="count" data-count="1047" data-count-type="percent">0</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--// PC 산업안전기사 브랜딩단 공통단 -->
+    </div>
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js'></script>
+    <!--jQuery 소스삽입  cdnjs 플러그인 사용 -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js'></script>
+    <!--jQuery-ui 소스삽입 (aniamtion 기능, 다양한 ui component)  cdnjs 플러그인 사용 -->
+    <script>
+		// 최초(즉시)실행
+		counting_safe();    //카운터
+		class_safe();   //화살표 이미지 효과
+		safe_txt(); //해커스 산업안전기사 텍스트 나타내기 효과
+	
+		repeat = setInterval(counting_safe, 5000); // delay 간격으로 실행.
+		repeat = setInterval(class_safe, 2500); // delay 간격으로 실행.
+	
+		var countReg = new RegExp(/\B(?=(\d{3})+(?!\d))/, "g");
+	
+		function counting_safe () {
+			$('.count').each(function () {
+				$(this).prop('Counter', 0).animate({
+					Counter: $(this).data('count')
+				}, {
+					duration: 2000,
+					easing: 'swing',
+					step: function (now) {
+						if($(this).data('count-type') === 'percent') {
+							$(this).text((Math.ceil(now).toString().replace(countReg, ",")) + '%')
+						}
+					}
+				});
+			});
+		}
+		function class_safe(){
+			$('.pass_arrow_safe').toggleClass('on')
+		}
+	
+		function safe_txt(){
+		   const content= "해커스 산업안전기사" // 사용할 문구
+		   const text = document.querySelector('.text')
+		   let index = 0; // 문자열 인덱스
+	
+		   const typing = () => {
+			   text.textContent += content[index++];
+			   if(index > content.length){
+				   text.textContent = "";
+				   index = 0;
+			   }
+		   }
+		   setInterval(typing, 500);
+		}
+	</script>
+</body>
+</html>
