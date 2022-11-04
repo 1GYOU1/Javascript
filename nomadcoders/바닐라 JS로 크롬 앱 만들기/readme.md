@@ -168,10 +168,57 @@ JSON.stringify(a)
 string을 JavaScript object로 바꿔줌
 
 ```js
-const a = [1, 2, 3];
+const a = "[1, 2, 3]";
 JSON.parse(a)
 //[1, 2, 3] -> Array
 ```
 
+<br>
 
+## 화살표 함수
+```js
+//화살표 함수 사용
+(item) => console.log("this is the turn of", item)
 
+//일반 함수 사용
+function salHello(item){
+    console.log("this is the turn of", item)
+}
+```
+
+## .filter()
+
+예제 1
+```js
+const arr = ['pizza','banana','tomato'];
+function filterEvent(food){return food !== "banana"}
+//banana를 제외한 배열 출력
+console.log(arr.filter(filterEvent))
+//['pizza','tomato']
+```
+
+예제 2
+```js
+const arr = [1234, 5454, 223, 122, 45, 6775, 334];
+function filterEvent(num){return num <= "1000"}
+//1000보다 작거나 같은 수 출력
+console.log(arr.filter(filterEvent))
+//[223, 122, 45, 334]
+```
+
+## .getCurrentPosition(success, error)
+사용자의 위치 좌표(위도, 경도)를 얻을 수 있는 메소드
+
+success함수,  error함수 필수 적용
+```js
+function onGeoOk(position){
+    const lat = position.coords.latitude;//위도
+    const lng = position.coords.longitude;
+    console.log("You live in", lat, lng);
+};
+function onGeoonGeoError(){
+    alert("Can't find you. No weather for you.");
+}
+
+navigator.geolocation.getCurrentPosition(onGeoOk, onGeoError);
+```
