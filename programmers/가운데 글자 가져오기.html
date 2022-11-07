@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>가운데 글자 가져오기</title>
+</head>
+<body>
+     <script>
+		//제출 답안
+          function solution(s) {
+               if(s.length%2 == 0){
+                    answer = s.slice(s.length/2-1, s.length/2+1);
+                    return answer;
+               }else{
+                    answer = s.slice(s.length/2, s.length/2+1);
+                    return answer;
+               }
+          }
+          console.log(solution('123'))
+     </script>
+</body>
+</html>

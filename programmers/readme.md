@@ -40,6 +40,8 @@ const result2 = arr2.reduce((acc, cur, idx) => { return acc += cur; }, 10);//초
 console.log(result2);  // 25
 ```
 
+[사용소스 - 평균 구하기](https://github.com/1GYOU1/Javascript/blob/main/programmers/%E1%84%91%E1%85%A7%E1%86%BC%E1%84%80%E1%85%B2%E1%86%AB%20%E1%84%80%E1%85%AE%E1%84%92%E1%85%A1%E1%84%80%E1%85%B5.html)
+
 ++) 참고 사이트
 - [Site](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce)
 
@@ -78,6 +80,8 @@ const newArray = testArray.filter(function(element, index, array){
     //[1,2,3]
 })(); 
 ```
+
+[사용소스 - 나누어 떨어지는 숫자 배열](https://github.com/1GYOU1/Javascript/blob/main/programmers/%EB%82%98%EB%88%84%EC%96%B4%20%EB%96%A8%EC%96%B4%EC%A7%80%EB%8A%94%20%EC%88%AB%EC%9E%90%20%EB%B0%B0%EC%97%B4.html)
 
 <br>
 
@@ -152,7 +156,25 @@ console.log(arr2.reverse())
 ```
 
 sort() 함수로 문자열(대소문자 구분없이) 정렬
+
+대문자 혹은 소문자로 변환한 후 조건식을 적용
+
 ```js
+const arr = ['apples', 'Apples', 'apple', 'Apple', 'Astronaut', 'astronaut'];
+
+arr.sort((prev, cur) => {  // 오름차순, ['apple', 'Apple', 'apples', 'Apples', 'Astronaut', 'astronaut']
+const [upperPrev, upperCur] = [prev.toUpperCase(), cur.toUpperCase()]
+if (upperPrev > upperCur) return 1;
+if (upperPrev < upperCur) return -1;
+if (upperPrev === upperCur) return 0;  // 생략 가능
+});
+
+arr.sort((prev, cur) => {  // 내림차순, ['Astronaut', 'astronaut', 'apples', 'Apples', 'apple', 'Apple']
+const [upperPrev, upperCur] = [prev.toUpperCase(), cur.toUpperCase()]
+if (upperPrev < upperCur) return 1;
+if (upperPrev > upperCur) return -1;
+if (upperPrev === upperCur) return 0;  // 생략 가능
+});
 ```
 
 sort() 함수로 객체 정렬
@@ -177,3 +199,91 @@ console.log(arr)
 ++) 참고 사이트
 - [Site 1](https://hianna.tistory.com/409)
 - [Site 2](https://pinokio0702.tistory.com/268)
+- [Site 3](https://guiyomi.tistory.com/121)
+
+<br>
+
+----
+
+## __.slice()__
+
+slice(start[, end])
+
+start : 추출 시작점에 대한 인덱스.
+- undefined인 경우: 0부터 slice
+- 음수를 지정한 경우: 배열의 끝에서부터의 길이를 나타낸다. slice(-2)를 하면 배열의 마지막 2개의 요소를 추출한다.
+- 배열의 길이와 같거나 큰 수를 지정한 경우: 빈 배열을 반환한다.
+
+end : 추출 종료할 기준 인덱스. (end를 제외하고 그 전까지의 요소만 추출한다.)
+- 지정하지 않을 경우: 배열의 끝까지 slice
+- 음수를 지정한 경우: 배열의 끝에서부터의 길이를 나타낸다. slice(2, -1)를 하면  세번째부터 끝에서 두번째 요소까지 추출
+- 배열의 길이와 같거나 큰 수를 지정한 경우: 배열의 끝까지 추출.
+
+반환값: 추출한 요소를 포함한 새로운 배열.
+
+![캡처](https://user-images.githubusercontent.com/90018379/200245267-4c93af27-a7e4-4ac9-9a5a-2d1a97822d72.PNG)
+
+
+```js
+const animals = ["lion", "tiger", "elephant", "zebra"];
+console.log(animals.slice( 1,  3));  // ["tiger", "elephant"]
+console.log(animals.slice(-3, -1));  // ["tiger", "elephant"]
+console.log(animals.slice(1, 1));  // []
+console.log(animals.slice(1));     // ["tiger", "elephant", "zebra"]
+console.log(animals.slice(0, -1)); // ["lion", "tiger", "elephant"]
+```
+
+참고 메서드
+
+array<b>.shift()</b> - 첫번째 원소 빼내 반환(원본 배열에 영향)
+
+array<b>.pop()</b> - 가장 뒷 원소 빼내 반환(원본 배열에 영향)
+
+<br>
+
+[사용소스 - 2016년](https://github.com/1GYOU1/Javascript/blob/main/programmers/2016년.html)
+
+[.slice() 참고사이트](https://m.blog.naver.com/wideeyed/221876916945)
+
+<br>
+
+----
+
+## __.toUpperCase()__
+
+문자열 대문자로 변환
+
+```js
+let a = 'abc';
+console.log('abc'.toUpperCase());    //ABC
+console.log(a.toUpperCase());    //ABC
+```
+
+[사용소스 - 2016년](https://github.com/1GYOU1/Javascript/blob/main/programmers/2016년.html)
+
+++) 참고 사이트
+
+[특정 날짜 요일구하기](https://mizzo-dev.tistory.com/entry/JavaScript%EB%82%A0%EC%A7%9C-Date-%ED%99%9C%EC%9A%A9%ED%95%B4%EC%84%9C-%EC%9A%94%EC%9D%BC-%EA%B5%AC%ED%95%98%EA%B8%B0)
+
+<br>
+
+----
+
+## __.abs()__
+
+주어진 숫자의 절대값을 반환
+
+```js
+Math.abs('-1');     // 1
+Math.abs(-2);       // 2
+Math.abs(null);     // 0
+Math.abs('');       // 0
+Math.abs([]);       // 0
+Math.abs([2]);      // 2
+Math.abs([1,2]);    // NaN
+Math.abs({});       // NaN
+Math.abs('string'); // NaN
+Math.abs();         // NaN
+```
+
+[사용소스 - 홀수와 짝수](https://github.com/1GYOU1/Javascript/blob/main/programmers/%ED%99%80%EC%88%98%EC%99%80%20%EC%A7%9D%EC%88%98.html)
