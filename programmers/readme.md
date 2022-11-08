@@ -1,4 +1,4 @@
-## __.reduce__
+## __.reduce()__
 
 함수의 반환 값은 누산기에 할당되고, 누산기는 순회 중 유지되므로 결국 최종 결과는 하나의 값이 된다.
 
@@ -40,7 +40,7 @@ const result2 = arr2.reduce((acc, cur, idx) => { return acc += cur; }, 10);//초
 console.log(result2);  // 25
 ```
 
-[사용소스 - 평균 구하기](https://github.com/1GYOU1/Javascript/blob/main/programmers/%E1%84%91%E1%85%A7%E1%86%BC%E1%84%80%E1%85%B2%E1%86%AB%20%E1%84%80%E1%85%AE%E1%84%92%E1%85%A1%E1%84%80%E1%85%B5.html)
+[사용소스 - 평균 구하기](https://github.com/1GYOU1/Javascript/blob/main/programmers/%ED%8F%89%EA%B7%A0%20%EA%B5%AC%ED%95%98%EA%B8%B0.html)
 
 ++) 참고 사이트
 - [Site](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce)
@@ -49,7 +49,7 @@ console.log(result2);  // 25
 
 ----
 
-## __.filter__
+## __.filter()__
 
 테스트를 통과한 요소로 이루어진 새로운 배열. 
 
@@ -87,7 +87,7 @@ const newArray = testArray.filter(function(element, index, array){
 
 ----
 
-## __.sort__
+## __.sort()__
 
 배열을 정렬하기 위해서 사용
 
@@ -196,6 +196,8 @@ console.log(arr)
 */
 ```
 
+[사용소스 - 정수 내림차순으로 배치하기](https://github.com/1GYOU1/Javascript/blob/main/programmers/정수 내림차순으로 배치하기.html)
+
 ++) 참고 사이트
 - [Site 1](https://hianna.tistory.com/409)
 - [Site 2](https://pinokio0702.tistory.com/268)
@@ -241,9 +243,12 @@ array<b>.pop()</b> - 가장 뒷 원소 빼내 반환(원본 배열에 영향)
 
 <br>
 
-[사용소스 - 2016년](https://github.com/1GYOU1/Javascript/blob/main/programmers/2016년.html)
+[사용소스 - 2016년](https://github.com/1GYOU1/Javascript/blob/main/programmers/2016%EB%85%84.html)
+[사용소스 - 가운데 글자 가져오기](https://github.com/1GYOU1/Javascript/blob/main/programmers/%EA%B0%80%EC%9A%B4%EB%8D%B0%20%EA%B8%80%EC%9E%90%20%EA%B0%80%EC%A0%B8%EC%98%A4%EA%B8%B0.html)
 
-[.slice() 참고사이트](https://m.blog.naver.com/wideeyed/221876916945)
+++) 참고 사이트
+
+- [.slice() 참고사이트](https://m.blog.naver.com/wideeyed/221876916945)
 
 <br>
 
@@ -259,11 +264,11 @@ console.log('abc'.toUpperCase());    //ABC
 console.log(a.toUpperCase());    //ABC
 ```
 
-[사용소스 - 2016년](https://github.com/1GYOU1/Javascript/blob/main/programmers/2016년.html)
+[사용소스 - 2016년](https://github.com/1GYOU1/Javascript/blob/main/programmers/2016%EB%85%84.html)
 
 ++) 참고 사이트
 
-[특정 날짜 요일구하기](https://mizzo-dev.tistory.com/entry/JavaScript%EB%82%A0%EC%A7%9C-Date-%ED%99%9C%EC%9A%A9%ED%95%B4%EC%84%9C-%EC%9A%94%EC%9D%BC-%EA%B5%AC%ED%95%98%EA%B8%B0)
+- [특정 날짜 요일구하기](https://mizzo-dev.tistory.com/entry/JavaScript%EB%82%A0%EC%A7%9C-Date-%ED%99%9C%EC%9A%A9%ED%95%B4%EC%84%9C-%EC%9A%94%EC%9D%BC-%EA%B5%AC%ED%95%98%EA%B8%B0)
 
 <br>
 
@@ -287,3 +292,94 @@ Math.abs();         // NaN
 ```
 
 [사용소스 - 홀수와 짝수](https://github.com/1GYOU1/Javascript/blob/main/programmers/%ED%99%80%EC%88%98%EC%99%80%20%EC%A7%9D%EC%88%98.html)
+
+<br>
+
+----
+
+## __NaN 판별__
+
+NaN 비교
+
+```js
+NaN === NaN;        // false
+Number.NaN === NaN; // false
+isNaN(NaN);         // true
+isNaN(Number.NaN);  // true
+
+function valueIsNaN(v) { return v !== v; }
+valueIsNaN(1);          // false
+valueIsNaN(NaN);        // true
+valueIsNaN(Number.NaN); // true
+```
+
+<br>
+
+----
+
+## __.join()__
+
+배열 내에 모든 값들을 순서대로 연결
+
+배열의 길이가 0이면 빈 문자열을 반환
+
+구분값이 존재하지 않으면 쉼표로 표기되어 연결
+
+빈 문자열일 경우 구분없이 연결
+
+```js
+let test1 = ['a', 'b', 'c'];
+let result1 = test.join();
+ // result : a,b,c
+let result2 = test.join('');
+ // result : abc
+let test2 = ['2020', '01', '01'];
+let result3 = test.join('-');
+ // result : 2020-01-01
+let result4 = test.join('/');
+ // result : 2020/01/01
+```
+
+[사용소스 - 정수 내림차순으로 배치하기](https://github.com/1GYOU1/Javascript/blob/main/programmers/정수 내림차순으로 배치하기.html)
+
+++) 참고 사이트
+
+- [.join() 참고사이트](https://sesok808.tistory.com/662)
+
+<br>
+
+----
+
+## __.split()__
+
+string.split(separator, limit)
+
+문자열을 'separator'로 잘라서, 'limit' 크기 이하의 배열에 잘라진 문자열을 저장하여 리턴
+
+separator
+- 필수 아님
+- 문자열을 잘라 줄 구분자 (문자열 또는 정규식)
+- 값이 입력되지 않으면 문자열 전체를 배열에 담아서 리턴합니다.(length 1)
+
+limit
+- 필수 아님
+- 최대 분할 갯수
+
+```js
+let str = '123456'
+console.log(str.split())
+//length 1
+//['123456']
+console.log(str.split(''))
+//한 글자씩(공백 포함) 배열에 저장하여 리턴
+//['1', '2', '3', '4', '5', '6']
+
+let str2 = 'a/b/c'
+console.log(str2.split('/'))
+//[a,b,c]
+```
+
+++) 참고 사이트
+
+- [.split() 참고사이트](https://hianna.tistory.com/377)
+ 
