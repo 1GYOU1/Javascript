@@ -383,3 +383,18 @@ console.log(str2.split('/'))
 
 - [.split() 참고사이트](https://hianna.tistory.com/377)
  
+ <br>
+
+----
+
+## __Array.fill()__
+
+Array.fill은 특정 value로 해당 Array를 채워주는 매서드.
+
+ <br>
+
+----
+
+## __Array.map()__
+
+배열 내의 모든 요소 각각에 대하여 주어진 함수를 호출한 결과를 모아 새로운 배열을 반환.
