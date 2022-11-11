@@ -488,3 +488,13 @@ solution(["Jane", "Kim"]);
 - [.__findIndex() 참고사이트](https://paperblock.tistory.com/74)
 - [.__findIndex() 참고사이트](https://doingsomething.tistory.com/77?category=984194)
 - [.__findIndex() 참고사이트](https://velog.io/@gue1030/filter-find-findIndex)
+
+<br>
+
+----
+
+## __.indexOf()__
+
+++추가 하기 !@!@
+
+[사용소스 - 정수 제곱근 판별](https://github.com/1GYOU1/Javascript/blob/main/programmers/서울에서 김서방 찾기.html)
