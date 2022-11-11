@@ -378,12 +378,13 @@ let str2 = 'a/b/c'
 console.log(str2.split('/'))
 //[a,b,c]
 ```
+[사용소스 - 정수 내림차순으로 배치하기](https://github.com/1GYOU1/Javascript/blob/main/programmers/%EC%A0%95%EC%88%98%20%EB%82%B4%EB%A6%BC%EC%B0%A8%EC%88%9C%EC%9C%BC%EB%A1%9C%20%EB%B0%B0%EC%B9%98%ED%95%98%EA%B8%B0.html)
 
 ++) 참고 사이트
 
 - [.split() 참고사이트](https://hianna.tistory.com/377)
  
- <br>
+<br>
 
 ----
 
@@ -391,10 +392,99 @@ console.log(str2.split('/'))
 
 Array.fill은 특정 value로 해당 Array를 채워주는 매서드.
 
- <br>
+++추가 하기 !@!@
+
+[사용소스 - x만큼 간격이 있는 n개의 숫자](https://github.com/1GYOU1/Javascript/blob/main/programmers/x%EB%A7%8C%ED%81%BC%20%EA%B0%84%EA%B2%A9%EC%9D%B4%20%EC%9E%88%EB%8A%94%20n%EA%B0%9C%EC%9D%98%20%EC%88%AB%EC%9E%90.html)
+
+<br>
 
 ----
 
 ## __Array.map()__
 
 배열 내의 모든 요소 각각에 대하여 주어진 함수를 호출한 결과를 모아 새로운 배열을 반환.
+
+++추가 하기 !@!@
+
+[사용소스 - x만큼 간격이 있는 n개의 숫자](https://github.com/1GYOU1/Javascript/blob/main/programmers/x%EB%A7%8C%ED%81%BC%20%EA%B0%84%EA%B2%A9%EC%9D%B4%20%EC%9E%88%EB%8A%94%20n%EA%B0%9C%EC%9D%98%20%EC%88%AB%EC%9E%90.html)
+
+<br>
+
+----
+
+## __Math.sqrt()__
+
+특정숫자의 제곱근 값을 계산해주는 함수
+
+사용 예시
+```js
+Math.sqrt([대상 숫자]);
+
+Math.sqrt(9); // 3
+Math.sqrt(121); // 11
+Math.sqrt(144); // 12
+```
+
+[사용소스 - 정수 제곱근 판별](https://github.com/1GYOU1/Javascript/blob/main/programmers/정수 제곱근 판별.html)
+
+<br>
+
+----
+
+## __Math.pow()__
+
+특정숫자의 거듭제곱 값을 계산해주는 함수
+
+사용 예시
+```js
+Math.pow([대상 숫자], [거듭제곱 횟수]);
+
+Math.pow(3, 2); // 9
+Math.pow(11, 2); // 121
+Math.pow(2, 10); // 1024
+
+// 분수 지수
+Math.pow(4, 0.5);  // 2 (4의 제곱근)
+Math.pow(8, 1/3);  // 2 (8의 세제곱근)
+Math.pow(2, 0.5);  // 1.4142135623730951 (2의 제곱근)
+Math.pow(2, 1/3);  // 1.2599210498948732 (2의 세제곱근)
+// 양의 지수
+Math.pow(7, -2);   // 0.02040816326530612 (1/49)
+Math.pow(8, -1/3); // 0.5
+// 양의 밑
+Math.pow(-7, 2);   // 49 (제곱의 결과값은 양수입니다.)
+Math.pow(-7, 3);   // -343 (세제곱은 음수가 될 수 있습니다.)
+// 밑이 음수이며 지수가 분수라면 언제나 NaN을 반환
+Math.pow(-7, 1/3); // NaN
+```
+
+[사용소스 - 정수 제곱근 판별](https://github.com/1GYOU1/Javascript/blob/main/programmers/정수 제곱근 판별.html)
+
+<br>
+
+----
+
+## __.findIndex()__
+
+++추가 하기 !@!@
+
+```js
+function solution(seoul) {
+    let newSeoul = seoul.findIndex(function(e){
+        return e == "Kim";
+    });
+    return("김서방은 " + newSeoul + "에 있다");
+}
+
+solution(["Jane", "Kim"]);
+```
+
+[사용소스 - 정수 제곱근 판별](https://github.com/1GYOU1/Javascript/blob/main/programmers/서울에서 김서방 찾기.html)
+
+++) 참고 사이트
+
+- [.__findIndex() 참고사이트](https://codechacha.com/ko/javascript-find-element-in-array/)
+- [.__findIndex() 참고사이트](https://bbaktaeho-95.tistory.com/40)
+- [.__findIndex() 참고사이트](https://paperblock.tistory.com/74)
+- [.__findIndex() 참고사이트](https://doingsomething.tistory.com/77?category=984194)
+- [.__findIndex() 참고사이트](https://velog.io/@gue1030/filter-find-findIndex)
