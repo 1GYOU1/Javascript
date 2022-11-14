@@ -196,7 +196,9 @@ console.log(arr)
 */
 ```
 
-[사용소스 - 정수 내림차순으로 배치하기](https://github.com/1GYOU1/Javascript/blob/main/programmers/정수 내림차순으로 배치하기.html)
+[사용소스 - 정수 내림차순으로 배치하기](https://github.com/1GYOU1/Javascript/blob/main/programmers/%EC%A0%95%EC%88%98%20%EB%82%B4%EB%A6%BC%EC%B0%A8%EC%88%9C%EC%9C%BC%EB%A1%9C%20%EB%B0%B0%EC%B9%98%ED%95%98%EA%B8%B0.html)
+
+[사용소스 - 나누어 떨어지는 숫자 배열](https://github.com/1GYOU1/Javascript/blob/main/programmers/%EB%82%98%EB%88%84%EC%96%B4%20%EB%96%A8%EC%96%B4%EC%A7%80%EB%8A%94%20%EC%88%AB%EC%9E%90%20%EB%B0%B0%EC%97%B4.html)
 
 ++) 참고 사이트
 - [Site 1](https://hianna.tistory.com/409)
@@ -340,7 +342,7 @@ let result4 = test.join('/');
  // result : 2020/01/01
 ```
 
-[사용소스 - 정수 내림차순으로 배치하기](https://github.com/1GYOU1/Javascript/blob/main/programmers/정수 내림차순으로 배치하기.html)
+[사용소스 - 정수 내림차순으로 배치하기](https://github.com/1GYOU1/Javascript/blob/main/programmers/%EC%A0%95%EC%88%98%20%EB%82%B4%EB%A6%BC%EC%B0%A8%EC%88%9C%EC%9C%BC%EB%A1%9C%20%EB%B0%B0%EC%B9%98%ED%95%98%EA%B8%B0.html)
 
 ++) 참고 사이트
 
@@ -425,7 +427,7 @@ Math.sqrt(121); // 11
 Math.sqrt(144); // 12
 ```
 
-[사용소스 - 정수 제곱근 판별](https://github.com/1GYOU1/Javascript/blob/main/programmers/정수 제곱근 판별.html)
+[사용소스 - 정수 제곱근 판별](https://github.com/1GYOU1/Javascript/blob/main/programmers/%EC%A0%95%EC%88%98%20%EC%A0%9C%EA%B3%B1%EA%B7%BC%20%ED%8C%90%EB%B3%84.html)
 
 <br>
 
@@ -458,7 +460,7 @@ Math.pow(-7, 3);   // -343 (세제곱은 음수가 될 수 있습니다.)
 Math.pow(-7, 1/3); // NaN
 ```
 
-[사용소스 - 정수 제곱근 판별](https://github.com/1GYOU1/Javascript/blob/main/programmers/정수 제곱근 판별.html)
+[사용소스 - 정수 제곱근 판별](https://github.com/1GYOU1/Javascript/blob/main/programmers/%EC%A0%95%EC%88%98%20%EC%A0%9C%EA%B3%B1%EA%B7%BC%20%ED%8C%90%EB%B3%84.html)
 
 <br>
 
@@ -479,7 +481,7 @@ function solution(seoul) {
 solution(["Jane", "Kim"]);
 ```
 
-[사용소스 - 정수 제곱근 판별](https://github.com/1GYOU1/Javascript/blob/main/programmers/서울에서 김서방 찾기.html)
+[사용소스 - 서울에서 김서방 찾기](https://github.com/1GYOU1/Javascript/blob/main/programmers/%EC%84%9C%EC%9A%B8%EC%97%90%EC%84%9C%20%EA%B9%80%EC%84%9C%EB%B0%A9%20%EC%B0%BE%EA%B8%B0.html)
 
 ++) 참고 사이트
 
@@ -497,4 +499,12 @@ solution(["Jane", "Kim"]);
 
 ++추가 하기 !@!@
 
-[사용소스 - 정수 제곱근 판별](https://github.com/1GYOU1/Javascript/blob/main/programmers/서울에서 김서방 찾기.html)
+[사용소스 - 정수 제곱근 판별](https://github.com/1GYOU1/Javascript/blob/main/programmers/%EC%84%9C%EC%9A%B8%EC%97%90%EC%84%9C%20%EA%B9%80%EC%84%9C%EB%B0%A9%20%EC%B0%BE%EA%B8%B0.html)
+
+<br>
+
+----
+
+화살표함수 
+- 나누어 떨어지는 숫자배열 .sort()
+- 서울애서 김서방 찾기 .indexOf()
