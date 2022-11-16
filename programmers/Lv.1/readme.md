@@ -1,3 +1,5 @@
+# Lv.1
+
 ## __.reduce()__
 
 함수의 반환 값은 누산기에 할당되고, 누산기는 순회 중 유지되므로 결국 최종 결과는 하나의 값이 된다.
@@ -508,3 +510,13 @@ solution(["Jane", "Kim"]);
 화살표함수 
 - 나누어 떨어지는 숫자배열 .sort()
 - 서울애서 김서방 찾기 .indexOf()
+
+<br>
+
+----
+
+## __.unshift()__
+
+배열 앞에서부터 .push()
+
+[사용소스 - 핸드폰 번호 가리기](https://github.com/1GYOU1/Javascript/blob/main/programmers/핸드폰 번호 가리기.html)
