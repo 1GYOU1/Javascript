@@ -1,5 +1,3 @@
-# Lv.1
-
 ## __.reduce()__
 
 함수의 반환 값은 누산기에 할당되고, 누산기는 순회 중 유지되므로 결국 최종 결과는 하나의 값이 된다.
@@ -102,6 +100,8 @@ Optional : `compareFunction`
 
 이 값이 생략되면, 배열의 element들은 문자열로 취급되어, 유니코드 값 순서대로 정렬.
 
+[유니코드 - 숫자 < 대문자 < 소문자](https://danac.tistory.com/92)
+
 이 함수는 두 개의 배열 element를 파라미터로 입력 받습니다.
 
 이 함수가 a, b 두개의 element를 파라미터로 입력받을 경우,
@@ -155,6 +155,16 @@ console.log(arr2.sort())
 console.log(arr2.reverse()) 
 // 내림차순 정렬
 //['ye', 'tae', 'jae', 'gyou']
+```
+
+sort()로 오름차순으로 정렬한 뒤에, reverse()를 호출하여 배열의 순서를 변경하여 내림차순과 동일한 결과 추출
+
+```js
+const arr = ['kiwi', 'apple', 'melon', 'grape', 'banana'];
+
+arr.sort();
+arr.reverse();
+console.log(arr);//[ 'melon', 'kiwi', 'grape', 'banana', 'apple' ]
 ```
 
 sort() 함수로 문자열(대소문자 구분없이) 정렬
