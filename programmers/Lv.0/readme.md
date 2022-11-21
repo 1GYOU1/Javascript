@@ -42,6 +42,8 @@ function solution(strlist) {
 <details>
 <summary><b>Methods</b></summary>
 
+<br>
+
 ## .repeat(num)
 
 문자열을 주어진 횟수만큼 반복하여 새로운 문자열을 반환
@@ -62,3 +64,42 @@ console.log(str.repeat(3));
 <br>
 
 </details><!--String End-->
+
+<br>
+
+## __Expressions & operators__
+
+<details>
+<summary><b>Methods</b></summary>
+
+<br>
+
+## Exponentiation (**)
+
+거듭제곱 (**)
+
+Math.pow()와 비슷.
+
+```js
+x ** y
+
+console.log(3 ** 4);
+// expected output: 81
+
+console.log(10 ** -2);
+// expected output: 0.01
+
+console.log(2 ** 3 ** 2);
+// expected output: 512
+
+console.log((2 ** 3) ** 2);
+// expected output: 64
+```
+
+사용소스 - 세균 증식.js
+
+----
+
+<br>
+
+</details><!--Expressions & operators End-->
