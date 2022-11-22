@@ -102,4 +102,31 @@ console.log((2 ** 3) ** 2);
 
 <br>
 
+## Addition assignment (+=)
+
+더하기 할당 (+=)
+
+오른쪽 피연산자의 값을 변수에 더한 결과를 다시 변수에 할당
+
+두 피연산자의 타입이 더하기 할당 연산자의 동작을 결정하며, 덧셈 또는 문자열 연결이 가능
+
+```js
+x += y // x = x + y
+
+let a = 2;
+let b = 'hello';
+
+console.log(a += 3); // addition
+// expected output: 5
+
+console.log(b += ' world'); // concatenation
+// expected output: "hello world"
+```
+
+사용소스 - k의 개수.js
+
+----
+
+<br>
+
 </details><!--Expressions & operators End-->
