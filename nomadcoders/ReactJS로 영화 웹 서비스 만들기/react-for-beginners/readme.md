@@ -90,7 +90,10 @@ ReactDOM.render(<Container/>, root);
 
 ## React 기본 지원 Hooks
 
+[참고사이트](https://defineall.tistory.com/900)
+
 ## useState
 
 - React에서 사용자의 반응에 따라, 화면을 바꿔주기(렌더링) 위해 사용되는 트리거역할을 하는 변수
+
 
