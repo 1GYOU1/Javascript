@@ -22,8 +22,14 @@ s1	s2	result
 같은 원소가 없으므로 0을 return합니다.
 */
 
-//마저 풀기!!
 function solution(s1, s2) {
-    console.log(Number(s2.length)*Number(s1.length))
-
+    let newArr = [];
+    let arr = s2.filter(function(el){
+        let arrS1 = s1.forEach(function(a){
+            if(el == a){
+                newArr.push(el)
+            }
+        })
+    })
+    return newArr.length
 }
