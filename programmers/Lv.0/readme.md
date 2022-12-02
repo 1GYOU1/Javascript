@@ -1,7 +1,8 @@
 # __Lv.0__
 
-## __Array__
+# __Array__
 
+<!--Array-->
 <!-- <details> -->
 <!-- <summary><b>Methods</b></summary> -->
 
@@ -108,14 +109,15 @@ console.log(newArr);//['규1', '규2', '규3']
 [참고사이트](https://hianna.tistory.com/422)
 
 <!-- </details>  -->
-<!--Array End-->
+<!--//Array End-->
 
 <br>
 
-## __String__
+# __String__
 
-<details>
-<summary><b>Methods</b></summary>
+<!--String-->
+<!-- <details>
+<summary><b>Methods</b></summary> -->
 
 <br>
 
@@ -138,14 +140,16 @@ console.log(str.repeat(3));
 
 <br>
 
-</details><!--String End-->
+<!-- </details> -->
+<!--//String End-->
 
 <br>
 
-## __Expressions & operators__
+# __Expressions & operators__
 
-<details>
-<summary><b>Methods</b></summary>
+<!--Expressions & operators-->
+<!-- <details>
+<summary><b>Methods</b></summary> -->
 
 <br>
 
@@ -204,4 +208,66 @@ console.log(b += ' world'); // concatenation
 
 <br>
 
-</details><!--Expressions & operators End-->
+<!-- </details> -->
+<!--//Expressions & operators-->
+
+<br>
+
+# __Objects__
+
+<!--Objects-->
+<!-- <details>
+<summary><b>Working with objects</b></summary> -->
+
+<br>
+
+## 객체와 속성
+
+속성에 접근할 땐 간단한 마침표 표기법을 사용
+
+```js
+objectName.propertyName
+```
+
+객체의 이름(아마도 그냥 변수)과 속성의 이름 모두 대소문자를 구별
+
+```js
+const myCar = new Object();
+myCar.make = "Ford";
+myCar.model = "Mustang";
+myCar.year = 1969;
+```
+
+위의 코드는, 중괄호({}) 안에 쉼표로 구분한 속성 이름과 값의 목록으로 나타내는 객체 초기자로 나타낼 수 있음.
+
+대괄호 표기법(속성 접근자)을 사용해 접근 가능
+
+```js
+const myCar = {
+  make: 'Ford',
+  model: 'Mustang',
+  year: 1969
+};
+
+console.log(myCar['make'])//Ford
+```
+
+유효한 JavaScript 식별자가 아닌 이름(공백이나 붙임표, 숫자로 시작하는 이름)을 가진 속성은 대괄호 표기법으로만 접근할 수 있음.
+
+```js
+myObj.type              = '마침표 구문';
+myObj['date created']   = '공백을 포함한 문자열';
+myObj[str]              = '문자열 값';
+myObj[rand]             = '무작위 수';
+myObj[obj]              = '객체';
+myObj['']               = '빈 문자열까지';
+```
+
+사용소스 - 모스부호 (1).js
+
+----
+
+<br>
+
+<!-- </details> -->
+<!--//Objects End-->
