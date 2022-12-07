@@ -517,16 +517,39 @@ solution(["Jane", "Kim"]);
 
 ----
 
-화살표함수 
-- 나누어 떨어지는 숫자배열 .sort()
-- 서울애서 김서방 찾기 .indexOf()
-
-<br>
-
-----
-
 ## __.unshift()__
 
 배열 앞에서부터 .push()
 
 [사용소스 - 핸드폰 번호 가리기](https://github.com/1GYOU1/Javascript/blob/main/programmers/핸드폰 번호 가리기.html)
+
+<br>
+
+----
+
+## __Number.isInteger(value)__
+
+특정 값이 정수인지 판별해주는 메서드
+
+IE에서는 사용할 수 없다.
+```js
+Number.isInteger(2) //true
+Number.isInteger(-2) //true
+Number.isInteger(2.2) //false
+Number.isInteger(NaN) //false
+Number.isInteger(Infinity) //false
+```
+
+루트를 씌우고, 소수인지 판별할 때 유용
+
+false면 소수, true면 정수
+```js
+Number.isInteger(Math.sqrt(i))
+```
+
+**참고
+
+- <span style="background:#fff5b1">제곱근</span>의 약수의 갯수는 <span style="background:#fff5b1">홀수</span>이다.
+
+[사용소스 - 약수의 개수와 덧셈](https://github.com/1GYOU1/Javascript/blob/main/programmers/약수의 개수와 덧셈.html)
+
