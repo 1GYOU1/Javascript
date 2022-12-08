@@ -6,8 +6,6 @@
 <!-- <details> -->
 <!-- <summary><b>Methods</b></summary> -->
 
-<br>
-
  ## .map()
 
 ```js
@@ -16,31 +14,45 @@ function solution(strlist) {
 }
 ```
 
-사용소스 - 배열 원소의 길이.ks
-
-----
+사용소스 - 배열 원소의 길이.js
 
 <br>
+
+----
 
 ## .pop()
 
 배열의 마지막 요소 제거
 
-사용소스 - 배열 회전시키기.js
+```js
+var arr = [1, 2, 3];
 
-----
+//제거된 요소 리턴
+arr.pop();  // 3
+```
+
+사용소스 - 배열 회전시키기.js
 
 <br>
 
-배열의 첫번째 요소 제거
+----
 
 ## .shift()
 
+배열의 첫번째 요소 제거
+
+```js
+var arr = [1, 2, 3];
+
+//제거된 요소 리턴
+arr.pop();  // 1
+```
+
 사용소스 - 배열 회전시키기.js
 
-----
-
 <br>
+
+----
 
 ## Array 중복 제거
 
@@ -108,6 +120,11 @@ console.log(newArr);//['규1', '규2', '규3']
 
 [참고사이트](https://hianna.tistory.com/422)
 
+
+<br>
+
+----
+
 <!-- </details>  -->
 <!--//Array End-->
 
@@ -119,9 +136,9 @@ console.log(newArr);//['규1', '규2', '규3']
 <!-- <details>
 <summary><b>Methods</b></summary> -->
 
-<br>
-
 ## .repeat(num)
+
+<br>
 
 문자열을 주어진 횟수만큼 반복하여 새로운 문자열을 반환
 
@@ -136,9 +153,9 @@ console.log(str.repeat(3));
 
 [참고사이트](https://developer-talk.tistory.com/177)
 
-----
-
 <br>
+
+----
 
 <!-- </details> -->
 <!--//String End-->
@@ -151,9 +168,9 @@ console.log(str.repeat(3));
 <!-- <details>
 <summary><b>Methods</b></summary> -->
 
-<br>
-
 ## Exponentiation (**)
+
+<br>
 
 거듭제곱 (**)
 
@@ -177,11 +194,13 @@ console.log((2 ** 3) ** 2);
 
 사용소스 - 세균 증식.js
 
-----
-
 <br>
 
+----
+
 ## Addition assignment (+=)
+
+<br>
 
 더하기 할당 (+=)
 
@@ -204,9 +223,9 @@ console.log(b += ' world'); // concatenation
 
 사용소스 - k의 개수.js
 
-----
-
 <br>
+
+----
 
 <!-- </details> -->
 <!--//Expressions & operators-->
@@ -265,9 +284,9 @@ myObj['']               = '빈 문자열까지';
 
 사용소스 - 모스부호 (1).js
 
-----
-
 <br>
+
+----
 
 <!-- </details> -->
 <!--//Objects End-->
