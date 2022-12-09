@@ -54,6 +54,23 @@ arr.pop();  // 1
 
 ----
 
+## .unshift()
+
+배열 앞에서부터 .push()
+
+```js
+let arr = ['a', 'b', 'c'];
+
+arr.shift();
+// 삭제한 'a'을 출력
+```
+
+[사용소스 - 핸드폰 번호 가리기](https://github.com/1GYOU1/Javascript/blob/main/programmers/핸드폰 번호 가리기.html)
+
+<br>
+
+----
+
 ## Array 중복 제거
 
 ### 방법 ①

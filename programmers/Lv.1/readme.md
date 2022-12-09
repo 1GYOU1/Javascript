@@ -517,16 +517,6 @@ solution(["Jane", "Kim"]);
 
 ----
 
-## __.unshift()__
-
-배열 앞에서부터 .push()
-
-[사용소스 - 핸드폰 번호 가리기](https://github.com/1GYOU1/Javascript/blob/main/programmers/핸드폰 번호 가리기.html)
-
-<br>
-
-----
-
 ## __Number.isInteger(value)__
 
 특정 값이 정수인지 판별해주는 메서드
