@@ -1,6 +1,6 @@
 # __Array__
 
-## __.reduce()__
+## __Array.prototype.reduce()__
 
 함수의 반환 값은 누산기에 할당되고, 누산기는 순회 중 유지되므로 결국 최종 결과는 하나의 값이 된다.
 
@@ -51,7 +51,7 @@ console.log(result2);  // 25
 
 ----
 
-## __.filter()__
+## __Array.prototype.filter()__
 
 테스트를 통과한 요소로 이루어진 새로운 배열. 
 
@@ -89,7 +89,7 @@ const newArray = testArray.filter(function(element, index, array){
 
 ----
 
-## __.sort()__
+## __Array.prototype.sort()__
 
 배열을 정렬하기 위해서 사용
 
@@ -373,7 +373,7 @@ array.indexOf(2, -3); // 0
 
 ----
 
-## __.join()__
+## __Array.prototype.join()__
 
 배열 내에 모든 값들을 순서대로 연결
 
@@ -406,7 +406,7 @@ let result4 = test.join('/');
 
 ----
 
-## __Array.fill()__
+## __Array.prototype.fill()__
 
 Array.fill은 특정 value로 해당 Array를 채워주는 매서드.
 
@@ -418,7 +418,7 @@ Array.fill은 특정 value로 해당 Array를 채워주는 매서드.
 
 ----
 
-## __Array.map()__
+## __Array.prototype.map()__
 
 배열 내의 모든 요소 각각에 대하여 주어진 함수를 호출한 결과를 모아 새로운 배열을 반환.
 

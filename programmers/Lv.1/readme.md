@@ -4,6 +4,8 @@
 
 문자열 대문자로 변환
 
+소문자로 변환은 .toLowerCase()
+
 ```js
 let a = 'abc';
 console.log('abc'.toUpperCase());    //ABC
