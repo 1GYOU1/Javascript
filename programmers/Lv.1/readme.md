@@ -78,7 +78,6 @@ valueIsNaN(Number.NaN); // true
 ```
 
 <br>
-<br>
 
 ----
 
@@ -110,3 +109,23 @@ Number.isInteger(Math.sqrt(i))
 
 [사용소스 - 약수의 개수와 덧셈](https://github.com/1GYOU1/Javascript/blob/main/programmers/약수의 개수와 덧셈.html)
 
+----
+
+## __Number.prototype.toString()__
+
+숫자를 문자열로 변환하여 반환한다. 
+
+해당 method의 인자 값으로 radix를 전달하면 숫자를 해당 radix의 값으로 변환한 값을 문자열로 반환한다.
+
+<br>
+
+**radix** (Optional)
+- 수의 값을 나타내기 위해 사용되기 위한 기준을 정하는 2와 36사이의 정수. (진수를 나타내는 기수의 값.)
+
+```js
+console.log(x.toString(2));       // displays '110'
+console.log((254).toString(16));  // displays 'fe'
+
+console.log((-10).toString(2));   // displays '-1010'
+console.log((-0xff).toString(2)); // displays '-11111111'
+```
