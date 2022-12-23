@@ -30,14 +30,13 @@ d	budget	result
 모든 부서의 물품을 구매해주면 10원이 됩니다. 따라서 최대 4개 부서의 물품을 구매해 줄 수 있습니다.
 */
 
-function solution(d, budget) {  
-    let result = 0;  
+function solution(d, budget) {   
     let num = 0;  
-    d.sort((a,b) => a-b).forEach(function(el){  
-    num += el;  
-    if(num <= budget){  
-      result++;  
-      }
+    let arr = d.sort((a,b) => a-b).filter(function(el, idx, arr){  
+        num += el;  
+        if(num <= budget){  
+            return idx+1
+        }
     })
-  return result;
-  }
+    return arr.length
+}
