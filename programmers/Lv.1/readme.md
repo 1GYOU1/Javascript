@@ -57,6 +57,61 @@ console.log(str2.split('/'))
 - [.split() 참고사이트](https://hianna.tistory.com/377)
  
 <br>
+
+## 문자열이 대문자인지 소문자인지 체크하는 방법
+
+<br>
+
+**방법 1** - match() 메서드와 정규 표현식
+
+<br>
+
+## String.prototype.match()
+
+match() 메서드는 문자열이 정규식과 매치되는 부분을 검색
+
+문자열이 정규식과 일치하면, 일치하는 전체 문자열을 첫 번째 요소로 포함하는 Array를 반환한 다음 괄호 안에 캡처된 결과가 옵니다. 일치하는 것이 없으면 null이 반환됩니다.
+
+```js
+str.match(regexp)
+```
+`regexp`
+
+정규식 개체. RegExp가 아닌 객체 obj가 전달되면, new RegExp(obj)를 사용하여 암묵적으로 RegExp로 변환. 매개변수를 전달하지 않고 match()를 사용하면, 빈 문자열:[""]이 있는 Array가 반환.
+
+# 예시 코드 추가하기 !!!!
+
+<br>
+
+## RegExp
+
+# 설명 추가하기 !!!!
+
+<br>
+
+.match(), RegExp() 동시 사용
+
+```js
+let abc = 'abcdefghijklmnopqrstuvwxyz'.split('');
+let ABC = 'abcdefghijklmnopqrstuvwxyz'.toUpperCase().split('');
+let arr = ['a', 'B', 'z']
+arr.forEach(function(el, idx){
+    if(el.match(new RegExp(/^[A-Z]/))){
+        console.log(el)//B
+    }else if(el.match(new RegExp(/^[a-z]/))){
+        console.log(el)//a, z
+    }
+})
+```
+[사용소스 - 시저 암호](https://github.com/1GYOU1/Javascript/blob/main/programmers/시저 암호.js)
+
+[참고 사이트 - 문자열 대문자 소문자 체크](https://developer-talk.tistory.com/789)
+
+[참고 사이트 - mdn .match()](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/String/match)
+
+[참고 사이트 - mdn RegExp](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp)
+
+
 <br>
 
 ----
