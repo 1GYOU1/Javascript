@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>checkbox_checked_true_false</title>
+</head>
+<style>
+  *{padding:0;margin:0;}
+  ul li{list-style: none;}
+  
+  .lect{width:500px;height:200px;margin:0 auto;background-color:lightyellow;}
+  .lect ul{display: flex;align-items: center;justify-content: center;padding-top:60px}
+  .lect ul li{width:50%;height:100px;background-color: linen;position:relative}
+  .lect ul li:first-child{background-color: honeydew;}
+  .lect ul li label{width:100%;height:100%;position:absolute;top:0px;left:0;}
+  .lect ul li strong{font-size: 24px;}
+  .lect ul li p{font-size: 24px;color:#3d3d3d;margin-top:25px;}
+</style>
+<body>
+
+  <div class="lect">
+    <div class="inner p_r">
+        <ul>
+            <li>
+                <label for="lect_check01"><input id="lect_check01" type="checkbox" name="lect_check" onclick="chk_change(this)"> 교재포함</label>
+                <p class="price_1_1"
+                    base-price="189,000"
+                    chk-price="214,020">189,000
+                </p>
+                <strong class="price_1_2"
+                    base-price="98,000"
+                    chk-price="123,020">98,000
+                </strong>
+            </li>
+            <li>
+                <label for="lect_check02"><input id="lect_check02" type="checkbox" name="lect_check" onclick="chk_changes(this)"> 교재포함</label>
+                <p class="price_2_1"
+                    base-price="189,000"
+                    chk-price="215,820">189,000
+                </p>
+                <strong class="price_2_2"
+                    base-price="98,000"
+                    chk-price="124,820">98,000
+                </strong>
+            </li>
+        </ul>
+    </div>
+</div>
+
+</body>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js'></script>
+<!--jQuery 소스삽입  cdnjs 플러그인 사용 -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js'></script>
+<!--jQuery-ui 소스삽입 (aniamtion 기능, 다양한 ui component)  cdnjs 플러그인 사용 -->
+<script>
+
+// 체크박스 체크시 가격 변경
+function chk_change(t){
+    let t_price_box = $(t).parents(".lect");
+    let t_price_1 	= t_price_box.find(".price_1_1");
+    let t_price_2 	= t_price_box.find(".price_1_2");
+
+    if($(t).is(":checked")){
+        t_price_1.text(t_price_1.attr("chk-price"));
+        $("#lec1").attr("data-lecid");
+        t_price_2.text(t_price_2.attr("chk-price"));
+        $("#lec1").attr("data-lecid");
+    }else{
+        t_price_1.text(t_price_1.attr("base-price"));
+        $("#lec1").attr("data-lecid");
+        t_price_2.text(t_price_2.attr("base-price"));
+        $("#lec1").attr("data-lecid");
+    }
+}
+
+function chk_changes(t){
+    let t_price_box = $(t).parents(".lect");
+    let t_price_1 	= t_price_box.find(".price_2_1");
+    let t_price_2 	= t_price_box.find(".price_2_2");
+
+    if($(t).is(":checked")){
+        t_price_1.text(t_price_1.attr("chk-price"));
+        $("#lec2").attr("data-lecid");
+        t_price_2.text(t_price_2.attr("chk-price"));
+        $("#lec2").attr("data-lecid");
+    }else{
+        t_price_1.text(t_price_1.attr("base-price"));
+        $("#lec2").attr("data-lecid");
+        t_price_2.text(t_price_2.attr("base-price"));
+        $("#lec2").attr("data-lecid");
+    }
+}
+
+</script>
+
+</html>
