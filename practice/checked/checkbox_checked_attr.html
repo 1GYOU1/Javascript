@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>checkbox_checked_true_false</title>
+    <title>checkbox_checked_attr</title>
 </head>
 <style>
   *{padding:0;margin:0;}
@@ -58,9 +58,9 @@
 
 // 체크박스 체크시 가격 변경
 function chk_change(t){
-    let t_price_box = $(t).parents(".lect");
-    let t_price_1 	= t_price_box.find(".price_1_1");
-    let t_price_2 	= t_price_box.find(".price_1_2");
+    var t_price_box = $(t).parents(".lect");
+    var t_price_1 	= t_price_box.find(".price_1_1");
+    var t_price_2 	= t_price_box.find(".price_1_2");
 
     if($(t).is(":checked")){
         t_price_1.text(t_price_1.attr("chk-price"));
@@ -76,9 +76,9 @@ function chk_change(t){
 }
 
 function chk_changes(t){
-    let t_price_box = $(t).parents(".lect");
-    let t_price_1 	= t_price_box.find(".price_2_1");
-    let t_price_2 	= t_price_box.find(".price_2_2");
+    var t_price_box = $(t).parents(".lect");
+    var t_price_1 	= t_price_box.find(".price_2_1");
+    var t_price_2 	= t_price_box.find(".price_2_2");
 
     if($(t).is(":checked")){
         t_price_1.text(t_price_1.attr("chk-price"));
