@@ -33,3 +33,16 @@ function solution(array, commands) {
     })
     return result
 }
+
+/*
+    commands [[2, 5, 3], [4, 4, 1], [1, 7, 3]]
+    forEach로 el을 하나씩 꺼내서
+    [2, 5, 3]
+    [4, 4, 1]
+    [1, 7, 3]
+    배열들의 첫번째, 두번째 원소들을 사용하여 array를 slice로 자르고, sort로 오름차순 정렬.
+    array.slice(2-1, 5).sort((a,b)=>a-b)
+    array.slice(4-1, 4).sort((a,b)=>a-b)
+    array.slice(1-1, 7).sort((a,b)=>a-b)
+    배열들의 마지막 원소를 push로 새 배열에 배치해주고 return.
+*/
