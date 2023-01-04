@@ -356,7 +356,7 @@ solution(["Jane", "Kim"]);
 
 ## __Array.prototype.indexOf()__
 
-배열에서 지정된 요소를 찾을 수 있는 첫 번째 인덱스를 반환하고 존재하지 않으면 -1을 반환
+indexOf(검색할 값 , 시작위치) - 앞에서부터 검색할 값을 찾기 시작
 
 ```js
 let array = [2, 9, 9];
@@ -369,7 +369,27 @@ array.indexOf(2, -3); // 0
 
 [사용소스 - 정수 제곱근 판별](https://github.com/1GYOU1/Javascript/blob/main/programmers/%EC%84%9C%EC%9A%B8%EC%97%90%EC%84%9C%20%EA%B9%80%EC%84%9C%EB%B0%A9%20%EC%B0%BE%EA%B8%B0.html)
 
-<br>
+참고 - string.prototype.indexOf() 도 있음 !!
+
+----
+
+## __Array.prototype.lastIndexOf()__
+
+lastIndexOf(검색할 값 , 시작위치) - 끝에서부터 검색할 값을 찾기 시작
+
+```js
+var array = [2, 5, 9, 2];
+array.lastIndexOf(2);     // 3
+array.lastIndexOf(7);     // -1
+array.lastIndexOf(2, 3);  // 3
+array.lastIndexOf(2, 2);  // 0
+array.lastIndexOf(2, -2); // 0
+array.lastIndexOf(2, -1); // 3
+```
+
+[사용소스 - level 0 - 한 번만 등장한 문자](https://github.com/1GYOU1/Javascript/blob/main/programmers/%EC%84%9C%EC%9A%B8%EC%97%90%EC%84%9C%20%EA%B9%80%EC%84%9C%EB%B0%A9%20%EC%B0%BE%EA%B8%B0.html)
+
+참고 - string.prototype.lastIndexOf() 도 있음 !!
 
 ----
 
