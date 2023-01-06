@@ -303,6 +303,36 @@ myObj['']               = '빈 문자열까지';
 
 <br>
 
+## Object에서 key를 배열로 가져오기
+
+```js
+let myObj = { 1: 'a', 2: 'b', 3: 'c', 4: 'd'};
+
+console.log(Object.keys(myObj));//[ '1', '2', '3', '4' ]
+```
+
+## Object에서 value를 배열로 가져오기
+
+```js
+let myObj = { 1: 'a', 2: 'b', 3: 'c', 4: 'd'};
+
+console.log(Object.values(myObj));//[ 'a', 'b', 'c', 'd' ]
+```
+
+
+## Object에서 key, vaule 추출
+
+```js
+myObj={ '0': 1, '1': 2, '2': 1, '5': 1, '7': 3 }
+
+console.log(Object.keys(myObj)[0])//5
+console.log(Object.values(myObj)[4])//3
+```
+
+사용소스 - 최빈값 구하기.js
+
+<br>
+
 ----
 
 <!-- </details> -->
