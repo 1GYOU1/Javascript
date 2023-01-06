@@ -26,29 +26,32 @@ array	result
 */
 
 function solution(array) {
+    //객체로 만들어주기. key = 배열 요소, value = 갯수
     let obj = {};
-    array.sort().forEach(function(el){
+    array.forEach(function(el){
         if(obj[el]) {
             obj[el] = obj[el] + 1;
         }else {
             obj[el] = 0 + 1;
         }
     })
-    // console.log(obj)
-    
-    const keys = Object.keys(obj);
-    let result = keys[0];
-    keys.forEach(function(val, idx){
-        if(obj[val] > obj[result]){
-            result = val;
-            // console.log(keys.)
-            if(result[idx] == result[idx + 1]){
-                // return -1
-                console.log('test')
-            }
+    // value 값만 배열로 추출. 내림차순 정렬하고 0, 1번째 요소 비교해서 값이 같으면 return -1 출력.
+    let arr = (Object.values(obj)).sort((a,b)=>b-a); 
+    if(arr[0] == arr[1]){
+        return -1;
+    }
+
+    //key 값만 배열로 추출.
+    const keysObj = Object.keys(obj);
+
+    //새 객체 선언
+    let result = keysObj[0];//keysObj의 0번째 객체 key값
+
+    //keysObj 요소 비교해가며 keysObj의 0번째 객체 key값보다 클 경우 해당 요소로 값 바꿔주기
+    keysObj.forEach(function(el, idx){
+        if(obj[el] > obj[result]){
+            result = el;
         }
     });
-    // return Number(result)
+    return Number(result)
 }
-
-//수정 하기 !@!@!@
