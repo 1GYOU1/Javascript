@@ -222,3 +222,7 @@ function onGeoonGeoError(){
 
 navigator.geolocation.getCurrentPosition(onGeoOk, onGeoError);
 ```
+
+https://openweathermap.org/ 
+
+해당 사이트 회원가입, 로그인
