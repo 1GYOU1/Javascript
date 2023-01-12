@@ -23,6 +23,8 @@ my_string	result
 "1a2b3c4d123Z"안의 자연수는 1, 2, 3, 4, 123 입니다. 따라서 1 + 2 + 3 + 4 + 123 = 133 을 return합니다.
 */
 
+
+//23-01-12 다시 풀기 !@
 function solution(my_string) {
     let result = 0
     for(let i = 0 ; i < my_string.length;i++) {
