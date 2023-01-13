@@ -337,3 +337,29 @@ console.log(Object.values(myObj)[4])//3
 
 <!-- </details> -->
 <!--//Objects End-->
+
+<br>
+
+# __Number__
+
+<!--Number-->
+<!-- <details>
+<summary><b>Methods</b></summary> -->
+
+추가하기 !@!@
+
+isNaN() 
+
+이 함수는 어떤 값이 NaN 값인지 판단하는데, 매개변수가 숫자가 아니면 true, 숫자이면 false를 반환하는 특징
+
+https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/isNaN
+
+Number.isNaN()
+
+isNaN() 함수의 더 엄격한 버전
+
+https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Number/isNaN
+
+사용소스 - 숨어있는 숫자의 덧셈 (2)
+<!-- </details> -->
+<!--//Number End-->
