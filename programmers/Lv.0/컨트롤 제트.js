@@ -35,24 +35,16 @@ s	result
 
 */
 
-//다시 풀어보기 !!!!!@@
 function solution(s) {
     let arr = s.split(' ');
     let num=parseInt(arr[0]);
-    let newArr = [];
     for(let i = 0; i < arr.length; i++){
         if(arr[i] === 'Z'){
-            if(arr[i-1]){
-                arr.splice(i-1, 2);
-                i -= 2;
-            }
-            else{
-                arr.splice(i,1)
-                i--; 
-            }
+            arr.splice(i-1, 2);//Z의 전 배열요소와 Z를 삭제
+            i -= 2;//2개의 요소가 빠져서 그만큼 i를 빼줌
         }
     }
-    return arr.reduce((a,b) => a+ +b, 0);
+    return arr.reduce((a,b) => a+ +b, 0);//Z와 Z가 없는 숫자 배열 요소 모두 더하기
 }
 /*
     a + +b의 형태
@@ -61,15 +53,13 @@ function solution(s) {
 
 //다른 풀이
 function solution(s) {
-    let answer = [0]
+    let answer = []
     let a = s.split(" ");
-
     a.map((el, idx) => {
       if (el !== "Z") {
-        answer.push(el / 1)
+        answer.push(parseInt(el))//Z가 아닐때만 배열에 추가
       } else {
-        let prev = answer[answer.length - 1]
-        answer.pop()
+        answer.pop()//Z는 안들어옴(push를 안해줬기 때문). answer에 추가됐던 마지막 배열요소 삭제.
       } 
     })
     return answer.reduce((acc, cur) => acc + cur, 0)
