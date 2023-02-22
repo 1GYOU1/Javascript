@@ -50,3 +50,9 @@ function solution(sides) {
     }
     return count
 }
+
+/*
+가장 긴 변은 두변의 합보다 작아야한다는 조건.
+1. slides 둘 중에 큰 수 < 구해햐하는 변의 값 + slides의 둘 중에 작은 수
+2. 구해야 하는 변의 값 < slides 두 변의 합
+*/
