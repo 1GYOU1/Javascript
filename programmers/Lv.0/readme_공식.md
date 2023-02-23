@@ -1,3 +1,18 @@
+### 다시 풀어볼 문제 리스트
+1. [프로그래머스 - 삼각형의 완성조건 (2)](https://school.programmers.co.kr/learn/courses/30/lessons/120868)
+```js
+//다른 사람의 풆이
+function solution(sides) {
+    return Math.min(...sides)*2-1
+}
+```
+
+<br>
+
+---
+
+# 공식
+
 ## 경우의 수
 
 [참고 - 경우의 수 구하기](https://blog.naver.com/PostView.nhn?blogId=noela70&logNo=221126034317)

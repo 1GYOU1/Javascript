@@ -56,3 +56,29 @@ function solution(sides) {
 1. slides 둘 중에 큰 수 < 구해햐하는 변의 값 + slides의 둘 중에 작은 수
 2. 구해야 하는 변의 값 < slides 두 변의 합
 */
+
+//다른 사람의 풆이 - 대체 무슨 공식인지 ..? 댓글에 써진 공식 읽어봐도 이해..xX....
+function solution(sides) {
+    return Math.min(...sides)*2-1
+}
+
+//다른 사람의 풀이
+function solution(sides) {
+    let a = Math.min(...sides)
+    let b = Math.max(...sides)
+    let answer = 0
+    for(let i = 1 ; i < a+b ; i++){
+        let arr = [a,b,i].sort((a,b) => a-b)
+        let [q,w,e] = arr
+        if(q+w > e){
+            answer++
+        }
+    }
+    return answer;
+}
+/*
+주어지는 배열 중 큰 수랑, 작은 수 구분해주고,
+for문 i < 두 수를 더한 값으로 증감++
+그 안에서 sort로 오름차순 정렬 후, 
+가장 큰 수 + 두번째로 큰 수 > 가장 작은수 일때만 for문 돌리면서 증감시켜 갯수 구하는 방식. 
+*/
