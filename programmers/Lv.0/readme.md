@@ -71,9 +71,39 @@ arr.shift();
 
 ----
 
-## .every(),.some(),.includes()
+## Array.prototype.some()
 
-[사용소스 - 핸드폰 번호 가리기](https://github.com/1GYOU1/Javascript/blob/main/programmers/핸드폰 번호 가리기.html)
+some() 메서드는 배열 안의 어떤 요소라도 주어진 판별 함수를 적어도 하나라도 통과하는지 테스트합니다. 만약 배열에서 주어진 함수가 true을 반환하면 true를 반환합니다. 그렇지 않으면 false를 반환합니다. 이 메서드는 배열을 변경하지 않습니다.
+
+```js
+추가하기 !@
+```
+
+[사용소스 - 외계어 사전]
+
+<br>
+
+----
+
+## Array.prototype.every()
+
+every() 메서드는 배열 안의 모든 요소가 주어진 판별 함수를 통과하는지 테스트합니다. Boolean 값을 반환.
+
+```js
+추가하기 !@
+```
+
+<br>
+
+----
+
+## Array.prototype.includes()
+
+includes() 메서드는 배열이 특정 요소를 포함하고 있는지 판별
+
+```js
+추가하기 !@
+```
 
 <br>
 
