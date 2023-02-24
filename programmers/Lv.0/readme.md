@@ -71,6 +71,14 @@ arr.shift();
 
 ----
 
+## .every(),.some(),.includes()
+
+[사용소스 - 핸드폰 번호 가리기](https://github.com/1GYOU1/Javascript/blob/main/programmers/핸드폰 번호 가리기.html)
+
+<br>
+
+----
+
 ## Array 중복 제거
 
 ### 방법 ①
