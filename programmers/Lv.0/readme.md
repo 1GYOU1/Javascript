@@ -6,12 +6,42 @@
 <!-- <details> -->
 <!-- <summary><b>Methods</b></summary> -->
 
- ## .map()
+ ## Array.prototype.map()
+
+map() 메서드는 배열 내의 모든 요소 각각에 대하여 주어진 함수를 호출한 결과를 모아 새로운 배열을 반환합니다.
 
 ```js
-function solution(strlist) {
-    return strlist.map((el) => el.length)
-}
+arr.map(callback(currentValue[, index[, array]])[, thisArg])
+```
+매개변수<br>
+
+callback<br>
+새로운 배열 요소를 생성하는 함수. 다음 세 가지 인수를 가집니다.
+
+currentValue<br>
+처리할 현재 요소.
+
+index Optional<br>
+처리할 현재 요소의 인덱스.
+
+array Optional<br>
+map()을 호출한 배열.
+
+thisArg Optional<br>
+callback을 실행할 때 this로 사용되는 값.
+
+반환 값<br>
+배열의 각 요소에 대해 실행한 callback의 결과를 모은 새로운 배열.
+
+```js
+const array1 = [1, 4, 9, 16];
+
+const map1 = array1.map(x => x * 2);
+
+console.log(map1);
+// [2, 8, 18, 32]
+console.log(arr1);
+// 원본배열에 변화 X [1, 4, 9, 16]
 ```
 
 사용소스 - 배열 원소의 길이.js
