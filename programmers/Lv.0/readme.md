@@ -99,11 +99,38 @@ every() 메서드는 배열 안의 모든 요소가 주어진 판별 함수를 �
 
 ## Array.prototype.includes()
 
-includes() 메서드는 배열이 특정 요소를 포함하고 있는지 판별
+includes() 메서드는 배열이 특정 요소를 포함하고 있는지 판별.
 
 ```js
-추가하기 !@
+arr.includes(valueToFind[, fromIndex])
 ```
+`valueToFind`
+탐색할 요소.
+> 참고: 문자나 문자열을 비교할 때, includes()는 대소문자를 구분합니다.
+
+`fromIndex` Optional
+
+이 배열에서 searchElement 검색을 시작할 위치입니다. 
+음의 값은 array.length + fromIndex의 인덱스를 asc로 검색합니다. 기본값은 0입니다.
+
+```js
+const e = '24';
+console.log(e.includes(2));//true
+
+[1, 2, 3].includes(2);     // true
+[1, 2, 3].includes(4);     // false
+[1, 2, 3].includes(3, 3);  // false
+[1, 2, 3].includes(3, -1); // true
+[1, 2, NaN].includes(NaN); // true
+
+//fromIndex 가 배열의 길이보다 같거나 크다면, false 를 반환합니다. 배열은 검색되지 않을 것입니다.
+var arr = ['a', 'b', 'c'];
+
+arr.includes('c', 3);   // false
+arr.includes('c', 100); // false
+```
+
+[사용소스 - 저주의 숫자 3]
 
 <br>
 
