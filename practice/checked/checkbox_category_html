@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>1gyou1</title>
+
+     <style>
+		*{margin:0;padding:0;font-size: 24px;}
+		.wrap{width:1200px;margin:0 auto;background-color:honeydew;}
+		ul li{list-style: none;}
+		a{color:#000;}
+
+		.list_area{margin-top:30px;}
+     </style>
+</head>
+<body>
+	<div class="wrap">
+		<div class="check_area">
+			<label for="cate1">
+				<input type="checkbox" class="cate" id="cate1" name="cate1" value="cate1">cate1
+			</label>
+			<label for="cate2">
+				<input type="checkbox" class="cate" id="cate2" name="cate2" value="cate2">cate2
+			</label>
+			<label for="cate3">
+				<input type="checkbox" class="cate" id="cate3" name="cate3" value="cate3">cate3
+			</label>
+			<label for="cate4">
+				<input type="checkbox" class="cate" id="cate4" name="cate4" value="cate4">cate4
+			</label>
+			<label for="cate5">
+				<input type="checkbox" class="cate" id="cate5" name="cate5" value="cate5">cate5
+			</label>
+		</div>
+		<div class="list_area">
+			<ul class="cate1_list">
+				<li>data 1 @@@@@@@@</li>
+				<li>data 1 @@@@@@@@ </li>
+				<li>data 1 @@@@@@@@ </li>
+				<li>data 1 @@@@@@@@ </li>
+				<li>data 1 @@@@@@@@ </li>
+			</ul>
+			<ul class="cate2_list">
+				<li>data 2 @@@@@@@@</li>
+				<li>data 2 @@@@@@@@ </li>
+				<li>data 2 @@@@@@@@ </li>
+				<li>data 2 @@@@@@@@ </li>
+				<li>data 2 @@@@@@@@ </li>
+			</ul>
+			<ul class="cate3_list">
+				<li>data 3 @@@@@@@@</li>
+				<li>data 3 @@@@@@@@ </li>
+				<li>data 3 @@@@@@@@ </li>
+				<li>data 3 @@@@@@@@ </li>
+				<li>data 3 @@@@@@@@ </li>
+			</ul>
+			<ul class="cate4_list">
+				<li>data 4 @@@@@@@@</li>
+				<li>data 4 @@@@@@@@ </li>
+				<li>data 4 @@@@@@@@ </li>
+				<li>data 4 @@@@@@@@ </li>
+				<li>data 4 @@@@@@@@ </li>
+			</ul>
+			<ul class="cate5_list">
+				<li>data 5 @@@@@@@@</li>
+				<li>data 5 @@@@@@@@ </li>
+				<li>data 5 @@@@@@@@ </li>
+				<li>data 5 @@@@@@@@ </li>
+				<li>data 5 @@@@@@@@ </li>
+			</ul>
+		</div>
+	</div>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js'></script>
+<!--jQuery 소스삽입  cdnjs 플러그인 사용 -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js'></script>
+<!--jQuery-ui 소스삽입 (aniamtion 기능, 다양한 ui component)  cdnjs 플러그인 사용 -->
+
+<script type="text/javascript">
+/*
+맨처음 카테고리 전체노출, 
+체크시 value에 연결된 ul show hide,
+아무 체크 안했을 시에 다시 전체노출.
+*/
+$('.cate').change(function(){
+	$('.cate').each(function (idx, item){
+		var checked = $('.cate:checked').length;
+		var aa = $(item).val();
+		if($(item).is(':checked')){		
+			// $("." + aa + "_list").show();
+			$(".list_area ul").eq(idx).show();
+		}else if(checked == 0){
+			$(".list_area ul").show();
+		}else{
+			// $("." + aa + "_list").hide();
+			$(".list_area ul").eq(idx).hide();
+		}	
+	});
+})
+</script>
+</body>
+</html>
