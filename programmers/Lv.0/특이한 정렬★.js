@@ -51,7 +51,7 @@ b랑 a의 거리가 같은 상황 즉 Math.abs(a - n) - Math.abs(b - n)이게 0�
 function solution(numlist, n) {
     numlist.sort((a,b)=>b-a);
     numlist.sort((a,b)=>{
-        return Math.abs(a-n) - Math.abs(b-n)
+        return Math.abs(a-n) - Math.abs(b-n)//n을 기준으로 정렬
     })
     return numlist;
 }
