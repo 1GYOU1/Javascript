@@ -25,6 +25,7 @@ array	result
 ※ 공지 - 2022년 10월 17일 제한 사항 및 테스트케이스가 수정되었습니다.
 */
 
+//다시 풀어보기 !@@!
 function solution(array) {
     //객체로 만들어주기. key = 배열 요소, value = 갯수
     let obj = {};
