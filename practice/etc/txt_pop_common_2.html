@@ -55,11 +55,11 @@ function evidenceShow(txt_pop, text_list) {
     // console.log(text_list)
 	// console.log(txt_pop)
 	// $(txt_pop).text(text_list);
-	document.querySelector(txt_pop).textContent=text_list;
+	// document.querySelector(txt_pop).textContent=text_list;
+	document.querySelector(txt_pop).innerText=text_list;
 	// document.querySelector(txt_pop).innerHTML=text_list;
 }
 
-//여러줄인데 한줄로 출력되는 오류... 다시해보기 !@
 function openTextPopup(args) {
     // console.log(args);
   var text_list = {
