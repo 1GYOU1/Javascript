@@ -24,9 +24,9 @@
 <body>
 
 <div class="wrap">
-	<a href="#;" onclick="$('.layer').fadeIn();text_pop_open(1);">TEXT1 Click !</a>
-	<a href="#;" onclick="$('.layer').fadeIn();text_pop_open(2);">TEXT2 Click !</a>
-	<a href="#;" onclick="$('.layer').fadeIn();text_pop_open(3);">TEXT3 Click !</a>
+	<a href="#;" onclick="text_open('text_pop',openTextPopup('text1'))">TEXT1 Click !</a>
+	<a href="#;" onclick="text_open('text_pop',openTextPopup('text2'))">TEXT2 Click !</a>
+	<a href="#;" onclick="text_open('text_pop',openTextPopup('text3'))">TEXT3 Click !</a>
 </div>
 
 <!--근거문구 공통팝업-->
@@ -43,37 +43,38 @@
 
 <script>
 
-function text_pop_open (textNum){
-	var textPopItem = document.querySelector('#text_pop');
-	var textPopItemCont = document.querySelector('#text_pop .cont p');
-	var textPopItemSet = textPopItem.setAttribute('data-text-number', textNum);//text_pop 엘리먼트에 data-text-number, 매개변수로 textNum  속성 값 추가해주기
-	var textPopItemList = textNumberData
-	var textPop = [];
+function text_open(el) {
+  $(document).ready(function () {
+    // console.log(el)
+    var temp = $("#" + el);
+    $(temp).parent(".layer").fadeIn();
+  });
+}
 
-	if(textPopItem && textPopItem.hasAttribute('data-text-number') && textNum) {
-		var textNumberData = {
-			1: "text 1 ! \n" +
-				"근거문구 1번 팝업 테스트 \n" +
-				"근거문구 1번 팝업 테스트 \n" +
-				"근거문구 1번 팝업 테스트",
-			2: `text 2 !
-				근거문구 3번 팝업 테스트
-				근거문구 3번 팝업 테스트
-				근거문구 3번 팝업 테스트`,
-			3: "text 3 !<br>text 3 !<br>text 3 !"
-		};
+function evidenceShow(txt_pop, text_list) {
+    // console.log(text_list)
+	// console.log(txt_pop)
+	// $(txt_pop).text(text_list);
+	document.querySelector(txt_pop).textContent=text_list;
+	// document.querySelector(txt_pop).innerHTML=text_list;
+}
 
-		Object.entries(textNumberData).forEach(function(i){//textNumberData object 타입이라서 entries 거쳐서 forEach 사용
-			if(i[0] == textNum){
-				textPop = i[1]
-				if(textNum == 1 || textNum == 2){
-					textPopItemCont.innerText = textPop;
-				}else{
-					textPopItemCont.innerHTML = textPop;
-				}
-			}
-		})
-	}
+//여러줄인데 한줄로 출력되는 오류... 다시해보기 !@
+function openTextPopup(args) {
+    // console.log(args);
+  var text_list = {
+    text1 : "text 1 ! \n" +
+			"근거문구 1번 팝업 테스트 \n" +
+			"근거문구 1번 팝업 테스트 \n" +
+			"근거문구 1번 팝업 테스트",
+    text2 : `text 2 !
+			근거문구 3번 팝업 테스트
+			근거문구 3번 팝업 테스트
+			근거문구 3번 팝업 테스트`,
+	text3 : "text 3 !<br>text 3 !<br>text 3 !"
+  };
+
+	evidenceShow("#text_pop .cont p", text_list[args]);
 }
 
 </script>
