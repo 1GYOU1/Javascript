@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>prev next Btn tab</title>
+    <style>
+        /* reset */
+        *{margin:0;padding:0;}
+        li{list-style:none;}
+
+        .evt_wrap{overflow-x:hidden;}
+        .evt_wrap img{width:100%;}
+        /* tab */
+        .cont .js-tab-type1-con{display:none;text-align:center}
+        .cont .js-tab-type1-con.on{display:block}
+        .cont .tab_section{width:100%;margin:0 auto;}
+        .cont .js-tab-type1{overflow:hidden;width:90%;margin:0 auto;}
+        .cont .js-tab-type1 li{display:flex;flex-wrap:wrap;width:33.33333%;float: left;}
+        .cont .js-tab-type1 li a{height:37vw;background:url('//gscdn.hackers.co.kr/ecpa/img/event/21/02/1500/m/long300/v1/cont09_tabmenu.jpg')0 0 / 900%;display: block;text-align: center;width:100%}
+        .cont .js-tab-type1 li.m2 a{background-position-x:calc(100%/8);}
+        .cont .js-tab-type1 li.m3 a{background-position-x:calc(100%/8*2);}
+        .cont .js-tab-type1 li.m4 a{background-position-x:calc(100%/8*3);}
+        .cont .js-tab-type1 li.m5 a{background-position-x:calc(100%/8*4);}
+        .cont .js-tab-type1 li.m6 a{background-position-x:calc(100%/8*5);}
+        .cont .js-tab-type1 li.m7 a{background-position-x:calc(100%/8*6);}
+        .cont .js-tab-type1 li.m8 a{background-position-x:calc(100%/8*7);}
+        .cont .js-tab-type1 li.m9 a{background-position-x:100%;}
+        .cont .js-tab-type1 li.on a{background-position-y:102%;}
+        .cont .js-tab-type1-con a{position:absolute;top:20vw;left:7vw;width:10vw;height:10vw;background:url('//gscdn.hackers.co.kr/ecpa/img/event/21/02/1500/m/long300/v1/cont09_tab_btn.png')0 0/100%;}
+        .cont .js-tab-type1-con a.next_btn{left:19vw;background-position-y:100%;}
+    </style>
+</head>
+<body>
+    <div class="evt_wrap">
+        <div class="cont">
+            <img src="//gscdn.hackers.co.kr/ecpa/img/event/21/02/1500/m/long300/v1/cont09.jpg" alt="" />
+            <!-- 탭 -->
+            <div class="tab_section btn_tab">
+                <div class="js-tab-type1-con p_r on" id="tab_0_1">
+                    <img src="//gscdn.hackers.co.kr/ecpa/img/event/21/02/1500/m/long300/v1/cont09_tab1.jpg" alt="" />
+                    <a class="prev_btn" href="#;"></a>
+                    <a class="next_btn" href="#;"></a>
+                </div>
+                <div class="js-tab-type1-con p_r" id="tab_0_2">
+                    <img src="//gscdn.hackers.co.kr/ecpa/img/event/21/02/1500/m/long300/v1/cont09_tab2.jpg" alt="" />
+                    <a class="prev_btn" href="#;"></a>
+                    <a class="next_btn" href="#;"></a>
+                </div>
+                <div class="js-tab-type1-con p_r" id="tab_0_3">
+                    <img src="//gscdn.hackers.co.kr/ecpa/img/event/21/02/1500/m/long300/v1/cont09_tab3.jpg" alt="" />
+                    <a class="prev_btn" href="#;"></a>
+                    <a class="next_btn" href="#;"></a>
+                </div>
+                <div class="js-tab-type1-con p_r" id="tab_0_4">
+                    <img src="//gscdn.hackers.co.kr/ecpa/img/event/21/02/1500/m/long300/v1/cont09_tab4.jpg" alt="" />
+                    <a class="prev_btn" href="#;"></a>
+                    <a class="next_btn" href="#;"></a>
+                </div>
+                <div class="js-tab-type1-con p_r" id="tab_0_5">
+                    <img src="//gscdn.hackers.co.kr/ecpa/img/event/21/02/1500/m/long300/v1/cont09_tab5.jpg" alt="" />
+                    <a class="prev_btn" href="#;"></a>
+                    <a class="next_btn" href="#;"></a>
+                </div>
+                <div class="js-tab-type1-con p_r" id="tab_0_6">
+                    <img src="//gscdn.hackers.co.kr/ecpa/img/event/21/02/1500/m/long300/v1/cont09_tab6.jpg" alt="" />
+                    <a class="prev_btn" href="#;"></a>
+                    <a class="next_btn" href="#;"></a>
+                </div>
+                <div class="js-tab-type1-con p_r" id="tab_0_7">
+                    <img src="//gscdn.hackers.co.kr/ecpa/img/event/21/02/1500/m/long300/v1/cont09_tab7.jpg" alt="" />
+                    <a class="prev_btn" href="#;"></a>
+                    <a class="next_btn" href="#;"></a>
+                </div>
+                <div class="js-tab-type1-con p_r" id="tab_0_8">
+                    <img src="//gscdn.hackers.co.kr/ecpa/img/event/21/02/1500/m/long300/v1/cont09_tab8.jpg" alt="" />
+                    <a class="prev_btn" href="#;"></a>
+                    <a class="next_btn" href="#;"></a>
+                </div>
+                <div class="js-tab-type1-con p_r" id="tab_0_9">
+                    <img src="//gscdn.hackers.co.kr/ecpa/img/event/21/02/1500/m/long300/v1/cont09_tab9.jpg" alt="" />
+                    <a class="prev_btn" href="#;"></a>
+                    <a class="next_btn" href="#;"></a>
+                </div>
+                <ul class="js-tab-type1 tab_menu">
+                    <li class="on m1">
+                        <a href="#tab_0_1"></a>
+                    </li>
+                    <li class="m2">
+                        <a href="#tab_0_2"></a>
+                    </li>
+                    <li class="m3">
+                        <a href="#tab_0_3"></a>
+                    </li>
+                    <li class="m4">
+                        <a href="#tab_0_4"></a>
+                    </li>
+                    <li class="m5">
+                        <a href="#tab_0_5"></a>
+                    </li>
+                    <li class="m6">
+                        <a href="#tab_0_6"></a>
+                    </li>
+                    <li class="m7">
+                        <a href="#tab_0_7"></a>
+                    </li>
+                    <li class="m8">
+                        <a href="#tab_0_8"></a>
+                    </li>
+                    <li class="m9">
+                        <a href="#tab_0_9"></a>
+                    </li>
+                </ul>
+            </div>
+            <!-- //탭 -->
+        </div>
+    </div>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js'></script>
+    <!--jQuery 소스삽입  cdnjs 플러그인 사용 -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js'></script>
+    <!--jQuery-ui 소스삽입 (aniamtion 기능, 다양한 ui component)  cdnjs 플러그인 사용 -->
+    <script src="./btn_tab.js"></script>
+</body>
+</html>
