@@ -58,6 +58,36 @@ console.log(str2.split('/'))
  
 <br>
 
+---
+
+## __.substring()__
+
+substring() 메소드는 string 객체의 시작 인덱스로 부터 종료 인덱스 전 까지 문자열의 부분 문자열을 반환
+
+```js
+str.substring(indexStart[, indexEnd])
+```
+`indexStart` - 반환문자열의 시작 인덱스
+
+`indexEnd` - 옵션. 반환문자열의 마지막 인덱스 (포함하지 않음.)
+
+```js
+var name = 'gyouwon';
+
+console.log(name.substring(0, 1));//g
+console.log(name.substring(1, 0));//g
+
+console.log(name.substring(1, 3));//yo
+console.log(name.substring(0, 7));//gyouwon
+
+console.log(name.substring(0));//gyouwon
+console.log(name.substring(2));//ouwon
+```
+
+<br>
+
+---
+
 ## 문자열이 대문자인지 소문자인지 체크하는 방법
 
 <br>
@@ -79,13 +109,15 @@ str.match(regexp)
 
 정규식 개체. RegExp가 아닌 객체 obj가 전달되면, new RegExp(obj)를 사용하여 암묵적으로 RegExp로 변환. 매개변수를 전달하지 않고 match()를 사용하면, 빈 문자열:[""]이 있는 Array가 반환.
 
-# 예시 코드 추가하기 !!!!
+## 예시 코드 추가하기 !!!!
 
 <br>
 
+---
+
 ## RegExp
 
-# 설명 추가하기 !!!!
+## 설명 추가하기 !!!!
 
 <br>
 
