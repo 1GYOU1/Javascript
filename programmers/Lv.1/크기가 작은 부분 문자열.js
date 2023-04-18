@@ -41,4 +41,6 @@ t.length - p.length(마지막에 p.length만큼 안떨어지는 나머지 요소
 split('')으로 하나씩 잘라서 배열로 만들고, 
 자른 배열을 slice(i,i+p.length)로 p.length만큼씩 얕은 복사본을 새로운 배열 객체로 반환.
 join('')으로 합쳐진 문자열로 만들고, 숫자 비교를 위해 Number형으로 변환하여 result++;  
+
+substring 메소드를 사용한 버전도 만들어 볼 수 있을 것 같다.
 */
