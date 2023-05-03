@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>document.cookie</title>
+
+     <style>
+          *{margin:0;padding:0;}
+          a{text-decoration:none;color:#333}
+          .right_btm_banner{position:fixed;right:0px;bottom:0px;z-index:999;}
+          .box{width:200px;height:200px;background-color:pink}
+          .right_btm_banner a{width:20px;height:20px;float:right;}
+     </style>
+</head>
+<body>
+     <div class="right_btm_banner" id="right_btm_banner" style="position:fixed;right:0;bottom:-300px;z-index:999;">
+          <label for="chk_1" onclick="pop_main_hidden(1,'right_btm_banner')">
+               <input type="checkbox" onclick="pop_main_hidden(1,'right_btm_banner')"> 오늘 하루 보지 않기
+          </label>
+          <a href="javascript:$('.right_btm_banner').fadeOut();">X</a>
+          <div class="box"></div>
+      </div>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js'></script>
+<!--jQuery 소스삽입  cdnjs 플러그인 사용 -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js'></script>
+<!--jQuery-ui 소스삽입 (aniamtion 기능, 다양한 ui component)  cdnjs 플러그인 사용 -->
+<script>
+     $(window).load(function(){
+          var cookie = document.cookie;
+          if(cookie.indexOf('right_btm_banner') == -1){
+               $(".right_btm_banner").show();
+               $(".right_btm_banner").animate({bottom:"0"},1800);
+          }
+     });
+
+     function pop_main_hidden(day,cName){
+          var c_name=cName;
+          made_cookie(c_name, 'done', day);
+          $("#"+c_name).hide();
+     }
+
+     function made_cookie( name, value, expiredays ){
+          var todayDate = new Date();
+          todayDate.setDate( todayDate.getDate() + expiredays );
+          document.cookie = name + "=" + escape( value ) + "; path=/; expires=" + todayDate.toGMTString() + ";"
+     }
+</script>
+</body>
+</html>
