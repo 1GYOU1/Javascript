@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cookie2</title>
+    <style>
+        *{margin:0;padding:0;}
+        a{text-decoration:none;color:#333;}
+        .wrap{height:5000px;position:relative;}
+        .my_box.right{position:absolute;top:50px;left:50%;margin-left:583px;}
+        .my_box.right div{display:flex;flex-direction:column;width:max-content;margin:0 auto;}
+        .my_box.right div a{width:200px;height:200px;display:flex;justify-content:center;align-items:center;}
+        .my_box.right div label[for^=q_close]{cursor:pointer;display:flex;justify-content:flex-end;align-items:center;font-size:16px;margin-top:5px;}
+        .my_box.right div label[for^=q_close] input{margin-right:5px;}
+        .my_box.right div.q_scroll{position:absolute;top:0;}
+        .my_box.right div.q_scroll.fixed{position:fixed;top:20px !important;z-index:1;}
+        .my_box.right div.q_original{position:absolute;top:0;left:0;}
+        .my_box.right div.dungdung{position:absolute;top:0;}
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="my_box right">
+            <div class="q_original q_mng_1" >
+                <a href="javascript:void(0);" style="background:lightblue">TEST</a>
+                <label for="q_close_one" onclick="q_hidden(1,'q_mng_1')"><input id="q_close_one" type="checkbox">오늘 하루 닫기</label>
+            </div>
+            <div class="q_scroll q_mng_2" style="top:300px;">
+                <a href="javascript:void(0);" style="background:honeydew">TEST</a>
+                <label for="q_close_week" onclick="q_hidden(7,'q_mng_2')"><input id="q_close_week" type="checkbox">일주일간 보지 않기</label>
+            </div>
+            <div class="dungdung q_mng_3" style="top:600px;">
+                <a href="javascript:void(0);" style="background:lightgrey">TEST</a>
+                <label for="q_close" onclick="$('.q_mng_3').hide();"><input id="q_close" type="checkbox">닫기</label>
+            </div>
+        </div>
+    </div>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js'></script>
+    <!--jQuery 소스삽입  cdnjs 플러그인 사용 -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js'></script>
+    <!--jQuery-ui 소스삽입 (aniamtion 기능, 다양한 ui component)  cdnjs 플러그인 사용 -->
+    <script>
+        $(function(){
+            for(let i=1;i<=$('.my_box div').length;i++){
+                if(document.cookie.indexOf('q_mng_'+ i) == -1){
+                    $('.q_mng_'+ i).show();
+                }else{
+                    $('.q_mng_'+ i).hide();
+                }
+            }
+            if($('.my_box div.q_scroll').length > 0) {
+                $(window).on('scroll', function() {
+                    if($(window).scrollTop() > $('.wrap').offset().top + 40) {
+                        $('.q_scroll').addClass('fixed');
+                    } else {
+                        $('.q_scroll').removeClass('fixed');
+                    }
+                });
+            }
+        });
+        function q_hidden(day,cName){
+            var c_name = cName;
+            var cookieDays = day === 1 ? 1 : 7; // day 변수에 따라 1일 또는 7일로 설정
+            q_cookie_make(c_name, 'done', cookieDays);
+            $("." + c_name).hide();
+        }
+        function q_cookie_make(name, value, days) {
+            var expires = "";
+            if(days) {
+                var date = new Date();
+                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                expires = "; expires=" + date.toGMTString();
+            }
+            document.cookie = name + "=" + value + expires + "; path=/";
+            console.log(document.cookie)
+        }
+    </script>
+</body>
+</html>
