@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OX_TEST_Page</title>
+    <style>
+        *{margin:0;padding:0;}
+        ul li{list-style:none;}
+        .wrap{display:flex;align-items:center;justify-content:center;width:100%;height:100vh;}
+        .inner{width:700px;margin:0 auto;}
+        h2{text-align:center;background-color:lightgoldenrodyellow;}
+        button{padding:10px;background-color:honeydew;border:2px solid rosybrown;border-radius:10px;}
+        .free_test{height:300px;display:flex;align-items:center;justify-content:center;background:lavenderblush}
+        .free_test li{position:relative;text-align:center;}
+        .free_test li .answer_box{width:500px;display:flex;justify-content:center;}
+        .free_test li .answer_box strong{width:50%;height:240px;margin-right:20px;display: inline-flex;align-items:center;justify-content:center;background:#e0e0e0;color:#8e8e8e;font-size:42px;border:2px solid #cccccc;border-radius:20px;}
+        .free_test li .answer_box strong:hover{background:#fff;border-color:rosybrown;color:rosybrown;}
+        .free_test li .answer_box strong:last-of-type{margin-right:0;}
+    </style>
+</head>
+<body>
+    <!-- 두 가지 선택지에 따른 결과 도출 -->
+    <div class="wrap">
+        <div class="inner">
+            <h2>test</h2>
+            <ul class="free_test">
+                <li>
+                    <button onclick="freeTest(0);">START</button>
+                </li>
+                <li style="display:none">
+                    <div class="answer_box">
+                        <strong onclick="freeTest(1,'left');">O</strong>
+                        <strong onclick="freeTest(1,'right');">X</strong>
+                    </div>
+                </li>
+                <li style="display:none">
+                    <div class="answer_box">
+                        <strong onclick="freeTest(2,'left');">left</strong>
+                        <strong onclick="freeTest(2,'right');">right</strong>
+                    </div>
+                </li>
+                <li style="display:none">
+                    <div class="answer_box">
+                        <strong onclick="freeTest(3,'left');">O</strong>
+                        <strong onclick="freeTest(3,'right');">X</strong>
+                    </div>
+                </li>
+                <li style="display:none">
+                    <div class="answer_box">
+                        <strong onclick="freeTest(4,'left');">left</strong>
+                        <strong onclick="freeTest(4,'right');">right</strong>
+                    </div>
+                </li>
+                <li style="display:none">
+                    <div class="answer_box">
+                        <strong onclick="freeTest(5,'left');">O</strong>
+                        <strong onclick="freeTest(5,'right');">X</strong>
+                    </div>
+                </li>
+                <li class="result_1" style="display:none">
+                    left > right
+                </li>
+                <li class="result_2" style="display:none">
+                    right > left
+                </li>
+            </ul>
+            <strong class="left">left choice : <span>0</span></strong><br/>
+            <strong class="right">right choice : <span>0</span></strong>
+        </div>
+    </div>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js'></script>
+    <!--jQuery 소스삽입  cdnjs 플러그인 사용 -->
+    <script>
+        let left = 0;
+        let right = 0;
+
+        function freeTest(e, i){
+            // loginChk();
+            if(e == 0) {
+                $('.free_test li').eq(e).hide();
+                $('.free_test li').eq(e + 1).show();
+            }else if (0 < e && e < 5) {
+                $('.free_test li').eq(e).hide();
+                $('.free_test li').eq(e + 1).show();
+                answerChoice(i);
+            }else{
+                $('.free_test li').eq(e).hide();
+                answerChoice(i);
+                left > right ? $('.result_1').show() : $('.result_2').show();
+                autoMap.printMap();
+            }
+        }
+        function answerChoice(i){
+            if(i == 'left'){
+                left++;
+                $('.left span').text(left);
+            }else{
+                right++;
+                $('.right span').text(right);
+            }
+        }
+    </script>
+</body>
+</html>
