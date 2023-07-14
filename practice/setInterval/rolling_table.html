@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>table_rolling</title>
+    <style>
+    *{margin:0;padding:0;}
+    a{text-decoration:none;color:#3d3d3d;}
+    li{list-style:none;}
+    table{width:100%;}
+    .wrap{width:100%;height:100vh;display:flex;align-items:center;justify-content:center;}
+    /* common_tab */
+    .js-tab-type1{overflow:hidden}
+    .js-tab-type1:after{display:block;content:'';clear:both}
+    .js-tab-type1 li{float:left}
+    .js-tab-type1-con{display:none}
+    .js-tab-type1-con.on{display:block}
+    /*tab*/
+    .tab_section{padding-bottom:40px;width:750px;}
+    .tab_section .js-tab-type1{width:95%;margin:0 auto;}
+    .tab_section .js-tab-type1 li{width:50%;margin-bottom:10px;}
+    .tab_section .js-tab-type1 li a{background:lightgrey;margin-right:10px;padding:20px 0;display:block;text-align:center;}
+    .tab_section .js-tab-type1 li:nth-child(2n) a{margin-right:0;}
+    .tab_section .js-tab-type1-con:after{clear:both;content:'';display:block;}
+    .tab_section .js-tab-type1-con a{float:right;padding:1.50px 40px;margin:40px 30px 0 0;color:#515151;font-size: 3.50px;border:1px solid #515151;border-radius: 50px;}
+    /*rolling_table*/
+    .hit_table_wrap{box-sizing:border-box;margin:0 auto;height:600px;width:95%;position:relative;overflow:hidden;}
+    .hit_table_wrap table tr{height:100px;border-bottom:1px solid #3d3d3d;background:pink;}
+    .hit_table_wrap table tr td{font-size:16px;}
+</style>
+    </style>
+</head>
+<body>
+    <!-- 탭 -->
+<div class="wrap">
+    <div class="tab_section">
+        <ul class="js-tab-type1">
+            <li class="m1 on">
+                <a href="#m_hit_tab_1">tab1</a>
+            </li>
+            <li class="m2">
+                <a href="#m_hit_tab_2">tab2</a>
+            </li>
+            <li class="m3">
+                <a href="#m_hit_tab_3">tab3</a>
+            </li>
+            <li class="m4">
+                <a href="#m_hit_tab_4">tab4</a>
+            </li>
+        </ul>
+        <div class="js-tab-type1-con on" id="m_hit_tab_1">
+            <div class="hit_table_wrap">
+                <table class="rolling_table" id="myList1">
+                    <colgroup>
+                        <col width="*">
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <td>rolling_txt_111</td>
+                        <tr>
+                            <td>rolling_txt_222</td>
+                        <tr>
+                            <td>rolling_txt_333</td>
+                        <tr>
+                            <td>rolling_txt_444</td>
+                        <tr>
+                            <td>rolling_txt_555</td>
+                        <tr>
+                            <td>rolling_txt_666</td>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="js-tab-type1-con hide_tab" id="m_hit_tab_2">
+            <div class="hit_table_wrap">
+                <table class="rolling_table" id="myList2">
+                    <colgroup>
+                        <col width="*">
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <td>rolling_txt_111</td>
+                        <tr>
+                            <td>rolling_txt_222</td>
+                        <tr>
+                            <td>rolling_txt_333</td>
+                        <tr>
+                            <td>rolling_txt_444</td>
+                        <tr>
+                            <td>rolling_txt_555</td>
+                        <tr>
+                            <td>rolling_txt_666</td>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="js-tab-type1-con hide_tab" id="m_hit_tab_3">
+            <div class="hit_table_wrap">
+                <table class="rolling_table" id="myList3">
+                    <colgroup>
+                        <col width="*">
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <td>rolling_txt_111</td>
+                        <tr>
+                            <td>rolling_txt_222</td>
+                        <tr>
+                            <td>rolling_txt_333</td>
+                        <tr>
+                            <td>rolling_txt_444</td>
+                        <tr>
+                            <td>rolling_txt_555</td>
+                        <tr>
+                            <td>rolling_txt_666</td>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="js-tab-type1-con hide_tab" id="m_hit_tab_4">
+            <div class="hit_table_wrap">
+                <table class="rolling_table" id="myList4">
+                    <colgroup>
+                        <col width="*">
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <td>rolling_txt_111</td>
+                        <tr>
+                            <td>rolling_txt_222</td>
+                        <tr>
+                            <td>rolling_txt_333</td>
+                        <tr>
+                            <td>rolling_txt_444</td>
+                        <tr>
+                            <td>rolling_txt_555</td>
+                        <tr>
+                            <td>rolling_txt_666</td>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- //탭 -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js'></script>
+<!--jQuery 소스삽입  cdnjs 플러그인 사용 -->
+<script type="text/javascript">
+    $(document).ready(function(){
+        //tab
+        $(function () {
+            $(".js-tab-type1 li a").click(function () {
+                if ($(this).attr("target") != "_blank") {
+                    var $li = $(this).parent();
+                    var $div = $(this).parent().parent().parent();
+                    var nm = $li.parent().find("li").index($li);
+                    $li.siblings("li").removeClass("on");
+                    $li.addClass("on");
+                    $("> .js-tab-type1-con", $div).hide();
+                    $("> .js-tab-type1-con", $div).eq(nm).show();
+                }
+            });
+        });
+        //id 1~4 for문 ver.
+        function rolling_list() {
+            for (let i=1;i<=4;i++) {
+                (function (e) {
+                    var widget = $('#myList' + e);
+                    var _first = widget.find('li:first-child');
+                    var height = parseInt('-' + $('#myList' + e + ' tr').css("height")) + 'px';
+                    widget.append(_first.clone());
+                    widget.animate({
+                        marginTop: height
+                    }, 500, function () {
+                        widget.css('margin-top', '0px');
+                        console.log(_first);
+                        _first.remove();
+                    });
+                })(i);
+            }
+        }
+        setInterval(rolling_list, 3000);
+        
+        // class 통일 ver.
+        // function rolling_list() {
+        //     $('.rolling_table').each(function() {
+        //         var widget = $(this);
+        //         var _first = widget.find('tr:first-child');
+        //         var height = parseInt('-' + widget.find('tr').css('height')) + 'px';
+        //         widget.append(_first.clone());
+        //         widget.animate({
+        //             marginTop: height
+        //         }, 500, function() {
+        //             widget.css('margin-top', '0px');
+        //             _first.remove();
+        //         });
+        //     })
+        // }
+        // setInterval(rolling_list, 3000);
+        });
+</script>
+
+</body>
+</html>
