@@ -1,3 +1,34 @@
+## 바닐라 JS로 크롬 앱 만들기
+
+#### 배우는 이론
+- Variables
+- Functions
+- Data Types
+- Arrays, Objects
+- DOM Functions
+- Events
+- if / else / for
+
+#### 구현하는 기능 
+- JS Clock
+- JS To Do List
+- Get Geolocation
+- Get Weather Information
+- Deploy to Github Pages
+
+#### 패키지
+- "Javascript"
+- "localStorage"
+- "AJAX"
+- "JSON"
+- "DOM"
+- "fetch"
+- "OpenWeather API"
+
+---
+
+<br>
+
 ## isNaN()
 
 isNaN() 함수는 어떤 값이 NaN이면 true, 아니면 false인지 판별
