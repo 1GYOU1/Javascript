@@ -53,6 +53,9 @@ const solution = arr => {
 }
 
 /*
+    arr.length - arr[0].length값이 양수이면 요소에 부족한 길이 값 만큼 0을 각각 push해주고,
+    음수라면 요소가 필요하기 때문에 0을 채운 요소를 push해서 맞춰준다.
+
 	Array.fill() 메소드 기억하기
     length를 변경하지는 않지만 this의 내용을 변경
     fill(value)
